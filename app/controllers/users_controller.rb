@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to @user 
+      redirect_to @user
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def destroy
     @user = current_user
     flash[:message] = "Account has been removed"
-    redirect_to new_user_path #should be dashboard
+    redirect_to new_user_path # should be dashboard
   end
   
   private

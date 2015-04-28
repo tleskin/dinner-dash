@@ -1,9 +1,8 @@
 require "rails_helper"
 
 RSpec.describe "User view" do
-  context 'with valid attributes' do
-
-    it 'can create a new user' do
+  context "with valid attributes" do
+    it "can create a new user" do
       visit new_user_path
 
       fill_in "Name", with: "David"
@@ -17,4 +16,5 @@ RSpec.describe "User view" do
     end
 
   end
+  
 end
