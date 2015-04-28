@@ -17,7 +17,7 @@ RSpec.describe "Admin Items" do
 
       click_link "Item1"
       click_link "Edit"
-
+      
       fill_in "Item title", with: "Edited Item"
       fill_in "Item description", with: "Edited Description"
       fill_in "Price", with: 600

@@ -1,0 +1,7 @@
+<h2>All Menu Items</h2>
+<ul><% @items.each do |item| %>
+  <li><% if item.active %>
+    <%= link_to "#{item.title}", item_path(item) %></li>
+      <% end %>
+    <% end %>
+</ul>
