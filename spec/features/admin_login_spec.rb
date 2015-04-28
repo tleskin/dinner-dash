@@ -25,7 +25,6 @@ RSpec.describe "Admin login" do
       click_button "Submit"
 
       expect(current_path).not_to eq(admin_path)
-      save_and_open_page
       visit admin_path
 
       expect(page).to have_content("404")
