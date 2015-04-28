@@ -3,4 +3,5 @@ FactoryGirl.define do
     name        "main course"
     description "for main course items"
   end
+  
 end

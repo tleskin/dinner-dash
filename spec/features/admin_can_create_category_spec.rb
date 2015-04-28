@@ -1,10 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
   
 RSpec.describe "admin can create categories" do
   context "with admin logged in" do
     it "can create a new category" do
       admin = create(:admin_user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+      allow_any_instance_of(ApplicationController)
+        .to receive(:current_user)
+        .and_return(admin)
 
       visit admin_categories_path
       click_button "Create Category"
@@ -17,6 +19,7 @@ RSpec.describe "admin can create categories" do
       expect(page).to have_content("vegan")
     end
   end
+
 end
 
 

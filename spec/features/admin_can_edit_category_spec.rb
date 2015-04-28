@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
   
 RSpec.describe "admin can update categories" do
   it "can update a category" do
@@ -15,4 +15,5 @@ RSpec.describe "admin can update categories" do
 
     expect(page).to have_content("Appetizer")
   end
+  
 end

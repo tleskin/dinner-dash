@@ -1,5 +1,4 @@
 class Admin::CategoriesController < Admin::BaseController
-
   def index
     @categories = Category.all
   end
@@ -44,11 +43,10 @@ class Admin::CategoriesController < Admin::BaseController
     redirect_to admin_categories_path
   end
 
-
   private
 
   def category_params
     params.require(:category).permit(:name, :description)
   end
 
-end 
+end

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
   
 RSpec.describe "admin can delete categories" do
   it "can delete a category" do
@@ -12,4 +12,5 @@ RSpec.describe "admin can delete categories" do
     expect(current_path).to eq(admin_categories_path)
     expect(page).not_to have_content("main course")
   end
+  
 end
