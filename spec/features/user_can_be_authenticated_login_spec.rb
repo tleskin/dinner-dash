@@ -18,4 +18,17 @@ RSpec.describe 'user authentication' do
       expect(page).to have_content("#{user.username} Dashboard")
     end
   end
+
+  context 'an unregistered user' do
+    it 'can not login' do
+      visit login_path
+
+      fill_in "Username", with: "FakeUsername"
+      fill_in "Password", with: "password"
+      click_button "Submit"
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content("Invalid Credentials. Please Try Again.")
+    end
+  end
 end
