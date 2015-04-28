@@ -3,7 +3,6 @@ require "rails_helper"
 RSpec.describe "Admin Items" do
   context "edit item" do
     it "can edit an item" do
-
       5.times do |x|
         create(:item, title: "Item#{x}")
       end

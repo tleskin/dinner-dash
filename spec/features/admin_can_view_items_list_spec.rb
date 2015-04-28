@@ -3,7 +3,6 @@ require "rails_helper"
 RSpec.describe "admin items" do
   context "when logged in as admin" do
     it "can view list of items" do
-
       5.times do |x|
         create(:item, title: "Item#{x}")
       end
