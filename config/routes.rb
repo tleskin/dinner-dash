@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :items, except: [:destroy]
+    resources :categories
   end
 
   resources :items, only: [:show, :index]
