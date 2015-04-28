@@ -3,7 +3,11 @@ require "rails_helper"
 RSpec.describe "admin items" do
   context "when logged in as admin" do
     it "can view list of items" do
-      create_list(:item, 5)
+
+      5.times do |x|
+        create(:item, title: "Item#{x}")
+      end
+
       admin = create(:admin_user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
@@ -12,7 +16,7 @@ RSpec.describe "admin items" do
       click_link "All Items"
 
       expect(current_path).to eq(admin_items_path)
-      expect(page).to have_content("Item5")
+      expect(page).to have_content("Item0")
       expect(page).to have_content("Item4")
       expect(page).to have_content("Item3")
       expect(page).to have_content("Item2")
