@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.describe "User view" do
   context 'with valid attributes' do
+    
     it 'can create a new user' do
       visit new_user_path
 
@@ -14,5 +15,6 @@ RSpec.describe "User view" do
 
       expect(page).to have_content("davy")
     end
+
   end
 end

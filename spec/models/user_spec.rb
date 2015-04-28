@@ -8,9 +8,8 @@ require 'rails_helper'
     it {should validate_length_of(:name).is_at_least(2).is_at_most(32)}
   end
 
-
 RSpec.describe "invalid email" do
-  it "should not create a user" do 
+  it "should not create a user" do
     user = User.create(
       name: "Mihir McDog", username: "mihir1",
       email: "mihir787gmail.com", password: "cos",
@@ -18,4 +17,5 @@ RSpec.describe "invalid email" do
       )
     expect(user).not_to be_valid
   end
+
 end
