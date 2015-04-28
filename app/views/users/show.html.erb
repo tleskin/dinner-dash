@@ -1,4 +1,6 @@
 
 <h1><%= "#{current_user.username} Dashboard" %></h1>
 
-<%= current_user.picture %>
+<%= image_tag current_user.picture.url %>
+<%= button_to "Edit Profile", edit_user_path, method: :get %>
+<%= button_to "Delete", user_path, method: :delete %>
