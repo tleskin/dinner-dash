@@ -18,7 +18,6 @@ RSpec.describe "User view" do
       click_link_or_button "Update User"
 
       expect(page).to have_content("davy")
-      save_and_open_page
     end
 
   end

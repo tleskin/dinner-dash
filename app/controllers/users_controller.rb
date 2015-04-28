@@ -31,6 +31,13 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @user = current_user
+    flash[:message] = "Account has been removed"
+    redirect_to new_user_path #should be dashboard
+  end
+  
   private
 
   def user_params
