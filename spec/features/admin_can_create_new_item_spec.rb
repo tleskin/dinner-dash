@@ -20,7 +20,6 @@ RSpec.describe "Admin items" do
       expect(page).to have_content("New Item")
       expect(page).to have_content("New Description")
       expect(page).to have_content(5)
-
       visit admin_items_path
 
       expect(page).to have_content("New Item")
