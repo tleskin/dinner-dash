@@ -1,0 +1,6 @@
+<%= form_for @item, url: admin_items_path do |f| %>
+  <%= f.text_field :title, placeholder: "Item title"  %>
+  <%= f.text_field :description, placeholder: "Item description" %>
+  <%= f.text_field :price, placeholder: "Price" %>
+  <%= f.submit "Create Item" %>
+<% end %>
