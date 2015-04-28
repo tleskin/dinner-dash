@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   namespace :admin do
     resources :items, except: [:destroy]
   end
@@ -8,5 +7,5 @@ Rails.application.routes.draw do
   patch "/user", to: "users#update", as: :update_user
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
-  get 'admin/dashboard', to: 'admin/dashboard#show'
+  get "admin/dashboard", to: "admin/dashboard#show"
 end

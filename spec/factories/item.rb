@@ -1,9 +1,8 @@
 FactoryGirl.define do
 
-
   factory :item do
     title
-    description 
+    description
     price        5
   end
 
@@ -14,5 +13,4 @@ FactoryGirl.define do
   sequence :description do |n|
     "Item Description#{n}"
   end
-
 end
