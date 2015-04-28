@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
+  has_attached_file :picture, styles: {micro: '50x50',
+                                     thumb: '100x100',
+                                     small: '200x200',
+                                     medium: '300x300'
+                                   }
+
+  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
+
 
   has_many :orders
 
