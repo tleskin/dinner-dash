@@ -11,11 +11,9 @@ RSpec.describe "admin items" do
       fill_in "Password", with: "password"
       click_button "Submit"
 
-save_and_open_page
       click_link "All Items"
 
       expect(current_path).to eq(admin_items_path)
-      save_and_open_page
       expect(page).to have_content("Item5")
       expect(page).to have_content("Item4")
       expect(page).to have_content("Item3")
