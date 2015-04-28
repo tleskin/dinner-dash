@@ -16,16 +16,16 @@ RSpec.describe "Admin login" do
   end
 
   context "with valid default user attributes" do
-    xit "is not taken to admin dashboard" do
+    it "is not taken to admin dashboard" do
       user = create(:default_user)
 
       visit login_path
-      fill_in "Username", with: "JohnDoe"
+      fill_in "Username", with: "JDoe"
       fill_in "Password", with: "password"
       click_button "Submit"
 
       expect(current_path).not_to eq(admin_path)
-
+      save_and_open_page
       visit admin_path
 
       expect(page).to have_content("404")
