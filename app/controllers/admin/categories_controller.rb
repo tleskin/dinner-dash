@@ -8,6 +8,24 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.new
   end
 
+  def show
+    @category = Category.find(params[:id])
+  end
+
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash[:message] = "Category has been updated!"
+      redirect_to admin_categories_path
+    else
+      render :edit
+    end
+  end
+
   def create
     @category = Category.new(category_params)
     if @category.save
