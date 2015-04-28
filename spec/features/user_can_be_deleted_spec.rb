@@ -6,7 +6,8 @@ RSpec.describe "User view" do
 
     it 'can destroy user' do
       user = create(:default_user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user)
+                                                  .and_return(user)
 
       visit user_path(user)
       click_link_or_button "Delete"
