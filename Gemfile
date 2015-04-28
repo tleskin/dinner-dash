@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "paperclip", "~> 4.2"
 gem 'bcrypt'
+gem 'database_cleaner'
 
 group :development, :test do
   gem 'byebug'
@@ -19,5 +20,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'shoulda-matchers'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
 end
