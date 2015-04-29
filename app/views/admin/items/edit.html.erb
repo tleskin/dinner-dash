@@ -5,5 +5,7 @@
   <%= f.text_field :description, placeholder: "Item description" %>
   <%= f.text_field :price, placeholder: "Price" %>
   <%= f.select :status, options_for_select(%w(active retired)), selected: @item.status %>
+  <%= f.label :category %>
+  <%= f.collection_check_boxes(:categories, Category.all, :id, :name) %>
   <%= f.submit "Submit Item" %>
 <% end %>

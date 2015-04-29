@@ -4,4 +4,7 @@
   <li>$<%= @item.price/100 %></li>
   <li><%= @item.status %></li>
   <li><%= link_to "Edit", edit_admin_item_path(@item) %></li>
+  <li><% @item.categories.each do |category| %>
+    <%= category.name %>
+  <% end %></li>
 </ul>

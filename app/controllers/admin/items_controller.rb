@@ -27,6 +27,7 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def update
+    byebug
     @item = Item.find(params[:id])
     if @item.update(item_params)
       flash[:notice] = "#{@item.title} Updated"
@@ -40,6 +41,6 @@ class Admin::ItemsController < Admin::BaseController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, :status)
+    params.require(:item).permit(:title, :description, :price, :status, :category_id)
   end
 end

@@ -2,5 +2,6 @@
   <%= f.text_field :title, placeholder: "Item title"  %>
   <%= f.text_field :description, placeholder: "Item description" %>
   <%= f.text_field :price, placeholder: "Price" %>
+  <%= f.collection_check_boxes(:categories, Category.all, :id, :name) %>
   <%= f.submit "Create Item" %>
 <% end %>
