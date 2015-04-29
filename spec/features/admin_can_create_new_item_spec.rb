@@ -5,6 +5,11 @@ RSpec.describe "Admin items" do
   context "as an admin" do
     it "can create a new item" do
       admin = create(:admin_user)
+      category = create(:category)
+      category1 = create(:category1)
+      category2 = create(:category2)
+      category3 = create(:category3)
+
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit admin_dashboard_path
@@ -15,8 +20,11 @@ RSpec.describe "Admin items" do
       fill_in "Item title", with: "New Item"
       fill_in "Item description", with: "New Description"
       fill_in "Price", with: 500
-      click_button "Create Item"
-
+      page.check("curries")
+      page.check("breakfast")
+      click_button "Submit Item"
+      expect(page).to have_content("curries")
+      expect(page).to have_content("breakfast")
       expect(page).to have_content("New Item")
       expect(page).to have_content("New Description")
       expect(page).to have_content(5)
