@@ -4,10 +4,16 @@ Rails.application.routes.draw do
     resources :categories
   end
 
+  root to: "home#index"
   resources :items, only: [:show, :index]
   resource :user, except: [:update]
   patch "/user", to: "users#update", as: :update_user
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
+  delete '/logout', to: 'sessions#destroy'
   get "admin/dashboard", to: "admin/dashboard#show"
+  get "/home", to: "home#index"
+
+
+
 end
