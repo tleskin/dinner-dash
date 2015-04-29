@@ -3,5 +3,5 @@
   <%= f.text_field :description, placeholder: "Item description" %>
   <%= f.text_field :price, placeholder: "Price" %>
   <%= f.select :status, options_for_select(%w(active retired)), selected: @item.status %>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit Item" %>
 <% end %>
