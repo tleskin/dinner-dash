@@ -23,7 +23,6 @@ RSpec.describe "Admin items" do
       page.check("curries")
       page.check("breakfast")
       click_button "Submit Item"
-save_and_open_page
       expect(page).to have_content("curries")
       expect(page).to have_content("breakfast")
       expect(page).to have_content("New Item")
