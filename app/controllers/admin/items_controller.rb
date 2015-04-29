@@ -27,7 +27,14 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def update
-    item = Item.find(params[:id])
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      flash[:notice] = "#{@item.title} Updated"
+      redirect_to admin_item_path(@item)
+    else
+      flash[:error] = @item.errors.full_messages.join(", ")
+      redirect_to admin_item_path(@item)
+    end
   end
 
   private

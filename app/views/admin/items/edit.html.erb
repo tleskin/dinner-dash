@@ -1,3 +1,8 @@
 <h1>Edit Item</h1>
 
-<%= render "form" %>
+<%= form_for @item, url: admin_item_path(@item) do |f| %>
+  <%= f.text_field :title, placeholder: "Item title"  %>
+  <%= f.text_field :description, placeholder: "Item description" %>
+  <%= f.text_field :price, placeholder: "Price" %>
+  <%= f.submit "Submit Item" %>
+<% end %>
