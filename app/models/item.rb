@@ -10,4 +10,5 @@ class Item < ActiveRecord::Base
   validates :description, presence: true
   validates :price, presence: true
 
+  enum status: %w(active retired)
 end
