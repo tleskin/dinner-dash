@@ -5,4 +5,14 @@ class Category < ActiveRecord::Base
   has_many :item_categories
   has_many :items, :through => :item_categories
 
+  def find_categories(ids)
+    categories = []
+    ids.each do |id|
+      if id.to_i != 0
+        categories << Category.find(id.to_i)
+      end
+    end
+    categories
+  end
+
 end

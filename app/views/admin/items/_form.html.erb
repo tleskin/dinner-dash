@@ -1,7 +1,8 @@
-<%= form_for @item, url: admin_items_path, method: :post do |f| %>
+<%= form_for @item, url: admin_items_path do |f| %>
   <%= f.text_field :title, placeholder: "Item title"  %>
   <%= f.text_field :description, placeholder: "Item description" %>
   <%= f.text_field :price, placeholder: "Price" %>
   <%= f.collection_check_boxes(:categories, Category.all, :id, :name) %>
-  <%= f.submit "Create Item" %>
+  <%= f.select :status, options_for_select(%w(active retired)), selected: @item.status %>
+  <%= f.submit %>
 <% end %>

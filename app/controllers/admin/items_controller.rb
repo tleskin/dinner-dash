@@ -8,6 +8,7 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def create
+    byebug
     @item = Item.new(item_params)
     if @item.save
       flash[:notice] = "#{@item.title} created!"
@@ -41,6 +42,10 @@ class Admin::ItemsController < Admin::BaseController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, :status, :category_id)
+    params.require(:item).permit(:title, :description, :price, :status)
+  end
+
+  def category_params
+    params.require(:item).permit(:categories)
   end
 end

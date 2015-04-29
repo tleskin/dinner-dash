@@ -17,10 +17,10 @@ RSpec.describe "Admin can add categories to idea" do
       fill_in "Item title", with: "Edited Item"
       fill_in "Item description", with: "Edited Description"
       fill_in "Price", with: 60
-      save_and_open_page
       page.check("curries")
-      click_button "Submit Item"
-
+      page.check("breakfast")
+      click_button "Update Item"
+      
 
       expect(page).to have_content("Edited Item")
       expect(page).to have_content("curries")

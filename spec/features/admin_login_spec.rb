@@ -6,7 +6,7 @@ RSpec.describe "Admin login" do
       admin = create(:admin_user)
 
       visit login_path
-      fill_in "Username", with: "JaneDoe"
+      fill_in "Email", with: "janedoe@example.com"
       fill_in "Password", with: "password"
       click_button "Submit"
       expect(current_path).to eq(admin_dashboard_path)
@@ -19,7 +19,7 @@ RSpec.describe "Admin login" do
       user = create(:default_user)
 
       visit login_path
-      fill_in "Username", with: "JDoe"
+      fill_in "Email", with: "JDoe"
       fill_in "Password", with: "password"
       click_button "Submit"
 
