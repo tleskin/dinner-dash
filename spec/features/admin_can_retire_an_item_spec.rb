@@ -19,9 +19,9 @@ RSpec.describe "admin capabilities" do
       click_link "Item1"
       click_link "Edit"
 
-      select 'retired', from: 'item[status]'
+      select "retired", from: "item[status]"
 
-      expect(page).to have_content('retired')
+      expect(page).to have_content("retired")
     end
   end
 end

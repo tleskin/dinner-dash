@@ -7,7 +7,7 @@ RSpec.describe "user item list" do
         create(:item, title: "Item#{x}")
       end
 
-      retired_item = create(:item, title: "Retired Item", status: "retired")
+      create(:item, title: "Retired Item", status: "retired")
 
       visit items_path
 
