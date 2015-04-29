@@ -5,7 +5,8 @@ RSpec.describe "Admin items" do
   context "as an admin" do
     it "can create a new item" do
       admin = create(:admin_user)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+      allow_any_instance_of(ApplicationController).to receive(:current_user)
+                                                  .and_return(admin)
 
       visit admin_dashboard_path
       click_link "Add New Item"
