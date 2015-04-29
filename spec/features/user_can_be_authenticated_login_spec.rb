@@ -10,7 +10,7 @@ RSpec.describe 'user authentication' do
     it 'can login' do
       visit login_path
 
-      fill_in "Username", with: user.username
+      fill_in "Email", with: user.email
       fill_in "Password", with: user.password
       click_button "Submit"
 
@@ -23,7 +23,7 @@ RSpec.describe 'user authentication' do
     it 'can not login' do
       visit login_path
 
-      fill_in "Username", with: "FakeUsername"
+      fill_in "Email", with: "FakeEmail@example.com"
       fill_in "Password", with: "password"
       click_button "Submit"
 
