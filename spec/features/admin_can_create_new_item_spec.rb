@@ -15,7 +15,7 @@ RSpec.describe "Admin items" do
       fill_in "Item title", with: "New Item"
       fill_in "Item description", with: "New Description"
       fill_in "Price", with: 500
-      click_button "Create Item"
+      click_button "Submit Item"
 
       expect(page).to have_content("New Item")
       expect(page).to have_content("New Description")
