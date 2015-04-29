@@ -3,4 +3,5 @@
   <li><%= @item.description %></li>
   <li>$<%= @item.price/100 %></li>
   <li><%= link_to "Edit", edit_admin_item_path(@item) %></li>
+  <li><%= button_to "Retire Item", edit_admin_item_path(@item), method: :get %></li>
 </ul>
