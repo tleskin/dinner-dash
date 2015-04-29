@@ -9,7 +9,10 @@ class Admin::ItemsController < Admin::BaseController
 
   def create
     @item = Item.new(item_params)
+
     if @item.save
+      category_collection = params[:item][:categories].reject(&:empty?)
+      @item.categories << category_collection.map {|id| Category.find(id.to_i)}
       flash[:notice] = "#{@item.title} created!"
       redirect_to admin_item_path(@item)
     else
@@ -27,7 +30,10 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def update
+    category_collection = params[:item][:categories].reject {|x| x.empty?}
     @item = Item.find(params[:id])
+    @item.categories << category_collection.map { |id| Category.find(id.to_i) }
+
     if @item.update(item_params)
       flash[:notice] = "#{@item.title} Updated"
       redirect_to admin_item_path(@item)
@@ -40,6 +46,6 @@ class Admin::ItemsController < Admin::BaseController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, :status)
+    params.require(:item).permit(:title, :description, :price, :status, :categories)
   end
 end
