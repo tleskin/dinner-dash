@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :items, except: [:destroy]
     resources :categories
   end
-
+  resource :checkout, only: [:create, :show]
   root to: "home#index"
   resources :items, only: [:show, :index]
   resource :user, except: [:update]
@@ -13,7 +13,4 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get "admin/dashboard", to: "admin/dashboard#show"
   get "/home", to: "home#index"
-
-
-
 end
