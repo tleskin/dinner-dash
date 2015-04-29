@@ -1,0 +1,12 @@
+<div class="item_show">
+<h2><%= @item.title %></h2>
+  <div class="item_picture">
+    <img src="<%= @item.image %>" alt="Image for food item #{@item.name}"/>
+  </div>
+  <div class="item_description">
+    <p>
+      <%= @item.description %>
+    </p>
+  </div>
+  <div class="Item_to_cart_button"> <%= button_to "Add To Cart", checkout_path(item_id: @item.id), method: :post %></div>
+</div>

@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  include ActionView::Helpers::TextHelper
 
+  before_action :load_cart
   helper_method :current_user
   helper_method :logged_in?
 
@@ -14,5 +16,9 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !current_user.nil?
+  end
+  
+  def load_cart
+    @cart ||= Cart.new(session[:cart])
   end
 end
