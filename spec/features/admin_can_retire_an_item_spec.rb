@@ -18,7 +18,6 @@ RSpec.describe "admin capabilities" do
 
       click_link "Item1"
       click_link "Edit"
-      save_and_open_page
 
       select 'retired', from: 'item[status]'
 
