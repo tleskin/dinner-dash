@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "paperclip", "~> 4.2"
 gem 'bcrypt'
 gem 'database_cleaner'
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'byebug'
