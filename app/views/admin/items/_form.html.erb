@@ -1,7 +1,7 @@
-<%= form_for @item, url: admin_items_path, method: :post do |f| %>
+  <%= form_for([:admin, @item]) do |f| %>
   <%= f.text_field :title, placeholder: "Item title"  %>
   <%= f.text_field :description, placeholder: "Item description" %>
   <%= f.text_field :price, placeholder: "Price" %>
   <%= f.select :status, options_for_select(%w(active retired)), selected: @item.status %>
-  <%= f.submit "Create Item" %>
+  <%= f.submit "Submit" %>
 <% end %>
