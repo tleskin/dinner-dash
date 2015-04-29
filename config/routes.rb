@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :categories
   end
 
-  resources :menu_items, only: [:show, :index]
+  resources :items, only: [:show, :index]
   resource :user, except: [:update]
   patch "/user", to: "users#update", as: :update_user
   get "login", to: "sessions#new"
