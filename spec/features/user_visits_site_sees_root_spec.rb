@@ -5,7 +5,7 @@ RSpec.describe "site root" do
     it "loads homepage when visiting root" do
       visit root_path
 
-      expect(page).to have_content("Super Real Food")
+      expect(page).to have_content("Superior Real Food")
     end
   end
 end
