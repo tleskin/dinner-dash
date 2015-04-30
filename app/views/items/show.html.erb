@@ -1,12 +1,15 @@
-<div class="item_show">
-<h2><%= @item.title %></h2>
-  <div class="item_picture">
-    <img src="<%= @item.image %>" alt="Image for food item #{@item.name}"/>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="item_picture">
+      <img src="<%= @item.image %>" alt="Image for food item #{@item.name}"/>
+      <div class="caption">
+        <div class="item_show">
+        <h2><%= @item.title %></h2>
+        <p><%= @item.description %></p>
+        <div class="Item_to_cart_button"> <%= button_to "Add To Cart", checkout_path(item_id: @item.id), method: :post %></div>
+      </div>
+    </div>
   </div>
-  <div class="item_description">
-    <p>
-      <%= @item.description %>
-    </p>
-  </div>
-  <div class="Item_to_cart_button"> <%= button_to "Add To Cart", checkout_path(item_id: @item.id), method: :post %></div>
 </div>
