@@ -1,0 +1,30 @@
+<div class="checkouts_page">
+  <h2>Your Cart</h2>
+  <table border = 2px >
+    <tr>
+      <td>Item</td>
+      <td>Price</td>
+      <td>Quantity</td>
+      <td>+/-</td>
+      <td>Subtotal</td>
+    </tr>
+    <tr>
+  <% @items.each do |item| %>
+      <td><%= item.title %></td>
+      <td><%= number_to_currency(item.price.to_f/100.00) %></td>
+      <td><%= @cart.quantity(item.id.to_s) %></td>
+      <td><%= button_to  "+", {controller: "checkouts", action: "update", item_id: item.id, change: "increase"}, method: "put" %><%= button_to  "-", {controller: "checkouts", action: "update", item_id: item.id, change: "decrease"}, method: "put" %></td>
+      <td><%= number_to_currency(@cart.subtotal[item.id].to_f/100.00) %></td>
+    </tr>
+  <% end %>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>total</td>
+        <td><%= number_to_currency(@cart.total.to_f/100.00) %></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
