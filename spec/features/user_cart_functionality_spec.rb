@@ -29,7 +29,6 @@ RSpec.describe "checkout" do
       first(:button, "Add To Cart").click
 
       visit checkout_path
-      save_and_open_page
       expect(page).to have_content("Item1")
       expect(page).to have_content("2")
       expect(page).to have_content("Subtotal")
