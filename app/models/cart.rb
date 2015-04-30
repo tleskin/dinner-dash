@@ -17,4 +17,30 @@ class Cart
   def count_all
     contents.values.sum
   end
+
+  def quantity(item_id)
+    contents[item_id]
+  end
+
+  def increase_quantity(item_id)
+    contents[item_id] += 1
+  end.to_s
+
+  def decrease_quantity(item_id)
+    contents[item_id] -= 1
+  end.to_s
+
+  def find_items
+    contents.keys.map {|item_id| Item.find(item_id)}
+  end
+
+  def subtotal
+    find_items.each_with_object({}) do |item, hash|
+      hash[item.id] = quantity(item.id.to_s) * item.price
+    end
+  end
+
+  def total
+    subtotal.values.sum
+  end
 end
