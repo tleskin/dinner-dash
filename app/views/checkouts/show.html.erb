@@ -13,7 +13,7 @@
       <td><%= item.title %></td>
       <td><%= number_to_currency(item.price.to_f/100.00) %></td>
       <td><%= @cart.quantity(item.id.to_s) %></td>
-      <td><%= button_to  "+", {controller: "checkouts", action: "update", item_id: item.id, change: "increase"}, method: "put" %><%= button_to  "-", {controller: "checkouts", action: "update", item_id: item.id, change: "decrease"}, method: "put" %></td>
+      <td><%= button_to  "+", {controller: "checkouts", action: "update", item_id: item.id, change: "increase"}, method: "put" %><%= button_to  "- ", {controller: "checkouts", action: "update", item_id: item.id, change: "decrease"}, method: "put" %></td>
       <td><%= number_to_currency(@cart.subtotal[item.id].to_f/100.00) %></td>
     </tr>
   <% end %>
@@ -27,4 +27,5 @@
       </tr>
     </tfoot>
   </table>
+  <%= button_to "Checkout", checkout_confirmation_path, method: :get %>
 </div>
