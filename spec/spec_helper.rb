@@ -39,4 +39,6 @@ RSpec.configure do |config|
   end
 
   config.include FactoryGirl::Syntax::Methods
+
+  config.backtrace_exclusion_patterns << %r{/gems/}
 end

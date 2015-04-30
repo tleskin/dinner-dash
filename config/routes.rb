@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   end
   resource :checkout, only: [:create, :update]
 
-  get 'checkout', to: "checkouts#edit"
+  resources :orders, only: [:create]
+  get 'checkout/confirmation', to: "checkouts#confirmation"
+  get 'checkout', to: "checkouts#show"
   root to: "home#index"
   resources :items, only: [:show, :index]
   resource :user, except: [:update]

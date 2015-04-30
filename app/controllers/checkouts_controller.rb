@@ -9,7 +9,12 @@ class CheckoutsController < ApplicationController
     redirect_to items_path
   end
 
-  def edit
+  def show
+    @items = @cart.find_items
+    @item_quantities = @cart.contents
+  end
+
+  def confirmation
     @items = @cart.find_items
     @item_quantities = @cart.contents
   end
