@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     resources :items, except: [:destroy]
     resources :categories
   end
-  resource :checkout, only: [:create, :show]
+  resource :checkout, only: [:create, :update]
+
+  get 'checkout', to: "checkouts#edit"
   root to: "home#index"
   resources :items, only: [:show, :index]
   resource :user, except: [:update]
