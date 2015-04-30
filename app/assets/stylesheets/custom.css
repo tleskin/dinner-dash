@@ -7,7 +7,13 @@ body {
   background-size: cover;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+
+}
+
+.navbar-brand{
+  font-family: 'Playfair Display', cursive !important;
+  font-size: 30px !important;
+  color: black;
 }
 
 h1 {
@@ -26,24 +32,53 @@ h1 {
 }
 
 .navbar {
-   background-color: transparent;
-   background: transparent;
-   color: white;
+   background-color: white;
+   background: white;
+   opacity: .8;
+   color: black;
+   z-index: 10000
+
 }
 
-.navbar li { color: #000 }
+.navbar li {
+  color: #000;
+}
 
 
 .nav.navbar-nav.navbar-right li a {
-    color: white;
+    color: black;
 }
 
 .nav.navbar-nav.navbar-left li a {
-    color: white;
+    color: black;
 }
 
 
-.container{
+/*.container{
   margin-left: 30%;
   margin-right: auto;
+}*/
+
+.jumbotron{
+  opacity: .7;
+  background-color: white;
+}
+
+.jumbotron1{
+  opacity: .5;
+  background-color: white;
+}
+
+.carousel{
+  margin:0 auto 50px;
+  z-index: 1;
+  width:100%;
+  height: 250px;
+  overflow:hidden;
+
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    margin: auto;
+    width:100%;
 }

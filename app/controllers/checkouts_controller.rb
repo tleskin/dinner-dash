@@ -9,7 +9,18 @@ class CheckoutsController < ApplicationController
     redirect_to items_path
   end
 
-  def show
-    @items = session[:cart].keys.map {|item_id| Item.find(item_id)}
+  def edit
+    @items = @cart.find_items
+    @item_quantities = @cart.contents
+  end
+
+  def update
+    if params[:change] == "increase"
+      @cart.increase_quantity(params[:item_id])
+      redirect_to checkout_path
+    elsif params[:change] == "decrease"
+      @cart.decrease_quantity(params[:item_id])
+      redirect_to checkout_path
+    end
   end
 end
