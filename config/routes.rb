@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resource :checkout, only: [:create, :update]
 
   resources :orders, only: [:create]
-  get 'checkout/confirmation', to: "checkouts#confirmation"
-  get 'checkout', to: "checkouts#show"
+  get "checkout/confirmation", to: "checkouts#confirmation"
+  get "checkout", to: "checkouts#show"
   root to: "home#index"
   resources :items, only: [:show, :index]
   resource :user, except: [:update]

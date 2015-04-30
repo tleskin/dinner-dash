@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
   def create
     @order = Order.new(order_params)
     if @order.save
@@ -11,11 +10,9 @@ class OrdersController < ApplicationController
     end
   end
 
-
   private
 
   def order_params
     params.require(:order).permit(:user_id, :subtotal)
   end
-
 end
