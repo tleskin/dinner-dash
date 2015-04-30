@@ -5,8 +5,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /*margin-left: auto;
-  margin-right: auto;*/
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
@@ -36,9 +36,13 @@ h1 {
    background: white;
    opacity: .8;
    color: black;
+   z-index: 10000
+
 }
 
-.navbar li { color: #000 }
+.navbar li {
+  color: #000;
+}
 
 
 .nav.navbar-nav.navbar-right li a {
@@ -63,4 +67,18 @@ h1 {
 .jumbotron1{
   opacity: .5;
   background-color: white;
+}
+
+.carousel{
+  margin:0 auto 50px;
+  z-index: 1;
+  width:100%;
+  height: 250px;
+  overflow:hidden;
+
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    margin: auto;
+    width:100%;
 }
