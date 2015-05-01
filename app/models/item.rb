@@ -13,5 +13,5 @@ class Item < ActiveRecord::Base
   has_many :item_categories
   has_many :categories, through: :item_categories
 
-  enum status: %w(active retired)
+  scope :active, -> {where(status: true)}
 end
