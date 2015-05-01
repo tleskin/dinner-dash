@@ -24,10 +24,16 @@ RSpec.describe "unauthorized user" do
       fill_in "Password confirmation", with: "password"
       click_link_or_button "Create User"
 
+      visit checkout_path
+
+      click_button "Checkout"
+
+
       expect(page).to have_content("item1")
       expect(page).to have_content("Confirm Order")
 
       click_button "Confirm Order"
+      
       expect(page).to have_content("Dashboard")
     end
   end
