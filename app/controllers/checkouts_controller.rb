@@ -28,4 +28,14 @@ class CheckoutsController < ApplicationController
       redirect_to checkout_path
     end
   end
+
+  def increase
+    @cart.increase_quantity(params[:item_id])
+    redirect_to checkout_path
+  end
+
+  def decrease
+    @cart.decrease_quantity(params[:item_id])
+    redirect_to checkout_path
+  end
 end
