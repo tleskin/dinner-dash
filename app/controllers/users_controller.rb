@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    require "pry" ; binding.pry
     @user = User.new
   end
 
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
     flash[:message] = "Account has been removed"
     redirect_to new_user_path # should be dashboard
   end
-  
+
   private
 
   def user_params

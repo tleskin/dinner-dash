@@ -13,6 +13,7 @@
       <td><%= number_to_currency(item.price.to_f/100.00) %></td>
       <td><%= @cart.quantity(item.id.to_s) %></td>
       <td><%= number_to_currency(@cart.subtotal[item.id].to_f/100.00) %></td>
+  <% end %>
     </tr>
     <tfoot>
       <tr>
@@ -23,6 +24,5 @@
       </tr>
     </tfoot>
   </table>
-  <%= button_to "Confirm Order", orders_path(order: {user_id: current_user.id, subtotal: @cart.subtotal[item.id].to_f/100.00})%>
-  <% end %>
+  <%= button_to "Confirm Order", orders_path(order: {user_id: current_user.id, subtotal: @cart.total.to_f/100.00})%>
 </div>
