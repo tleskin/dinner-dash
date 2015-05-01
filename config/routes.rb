@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post "checkout/increase", to: "checkouts#increase"
   post "checkout/decrease", to: "checkouts#decrease"
   get "checkout", to: "checkouts#show"
+  get 'checkout', to: "checkouts#edit"
   root to: "home#index"
   resources :items, only: [:show, :index]
   resource :user, except: [:update]
