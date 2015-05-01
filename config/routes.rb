@@ -4,7 +4,12 @@ Rails.application.routes.draw do
     resources :categories
   end
   resource :checkout, only: [:create, :update]
-  
+
+  resources :orders, only: [:create]
+  get "checkout/confirmation", to: "checkouts#confirmation"
+  post "checkout/increase", to: "checkouts#increase"
+  post "checkout/decrease", to: "checkouts#decrease"
+  get "checkout", to: "checkouts#show"
   get 'checkout', to: "checkouts#edit"
   root to: "home#index"
   resources :items, only: [:show, :index]
