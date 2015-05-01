@@ -81,3 +81,39 @@ h1 {
     margin: auto;
     width:100%;
 }
+
+#flash_notice {
+  text-style: bold;
+  text-color: red;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: cornsilk;
+  background-color: darkgrey;
+}
+
+#flash_errors{
+  text-style: bold;
+  text-color: red;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: cornsilk;
+  background-color: darkgrey;
+}
+
+#flash_messages{
+  text-style: bold;
+  text-color: red;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: cornsilk;
+  background-color: darkgrey;
+}

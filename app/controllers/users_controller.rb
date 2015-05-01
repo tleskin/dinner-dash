@@ -33,11 +33,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    if @user.destroy
+    user = User.find(session[:user_id])
+    if user.destroy
       flash[:message] = "Account has been removed"
       redirect_to root_path
     else
+      flash[:errors] = user.errors.full_messages.join(", ")
       render @user
     end
   end
