@@ -8,9 +8,8 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 
 
-  has_many :orders
-
   has_secure_password
+  has_many :orders, dependent: :destroy
   validates :name, length: { in: 2..32 }
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true,

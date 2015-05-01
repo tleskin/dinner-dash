@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:message] = "User has been successfully created!"
-      redirect_to user_path(@user)
+      redirect_to user_path
     else
       flash[:errors] = @user.errors.full_messages(", ").join
       render :new
@@ -34,10 +34,14 @@ class UsersController < ApplicationController
 
   def destroy
     @user = current_user
-    flash[:message] = "Account has been removed"
-    redirect_to new_user_path # should be dashboard
+    if @user.destroy
+      flash[:message] = "Account has been removed"
+      redirect_to root_path
+    else
+      render @user
+    end
   end
-  
+
   private
 
   def user_params
