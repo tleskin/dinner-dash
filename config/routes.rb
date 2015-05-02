@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   end
   resource :checkout, only: [:create, :update]
 
-  resources :orders, only: [:create]
+  resources :orders, only: [:create, :show]
+  get "admin/orders/dashboard", to: "admin/orders#dashboard"
   get "checkout/confirmation", to: "checkouts#confirmation"
   post "checkout/increase", to: "checkouts#increase"
   post "checkout/decrease", to: "checkouts#decrease"

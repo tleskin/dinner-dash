@@ -47,4 +47,10 @@ class Cart
   def remove_item(item_id)
     contents.delete(item_id)
   end
+
+  def create_order_items(order_id)
+    contents.find_items.each do
+      OrderItems.new()
+    end
+  end
 end

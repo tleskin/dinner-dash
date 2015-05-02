@@ -1,7 +1,6 @@
 class CheckoutsController < ApplicationController
 
   def create
-
     item = Item.find(params[:item_id])
     @cart.add_item(item.id)
     session[:cart] = @cart.contents
@@ -15,6 +14,7 @@ class CheckoutsController < ApplicationController
   end
 
   def confirmation
+    order = Order.new(user_id: params[:order][:user_id], subtotal: params[:order][:subtotal])
     @items = @cart.find_items
     @item_quantities = @cart.contents
   end

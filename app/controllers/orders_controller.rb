@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
       flash[:notice] = "Order Successfully Placed"
       redirect_to current_user
     else
-      flash[:notice] = "Grow your beard, try again"
+      flash[:error] = "Grow your beard, try again"
       redirect_to checkout_path
     end
   end
