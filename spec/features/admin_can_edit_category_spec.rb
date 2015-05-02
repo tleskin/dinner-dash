@@ -1,5 +1,5 @@
 require "rails_helper"
-  
+
 RSpec.describe "admin can update categories" do
   it "can update a category" do
     admin = create(:admin_user)
@@ -7,7 +7,8 @@ RSpec.describe "admin can update categories" do
 
     category = create(:category)
     visit admin_categories_path
-    click_link_or_button "main course" 
+    second(:link, "main course").click
+    save_and_open_page
     click_button "Edit Category"
     fill_in "Name", with: "Appetizer"
     fill_in "Description", with: "before main course"
@@ -15,5 +16,5 @@ RSpec.describe "admin can update categories" do
 
     expect(page).to have_content("Appetizer")
   end
-  
+
 end
