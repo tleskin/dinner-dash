@@ -38,4 +38,9 @@ class CheckoutsController < ApplicationController
     @cart.decrease_quantity(params[:item_id])
     redirect_to checkout_path
   end
+
+  def remove
+    item = @cart.remove_item(params[:item_id])
+    redirect_to checkout_path
+  end
 end

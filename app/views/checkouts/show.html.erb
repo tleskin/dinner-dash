@@ -7,6 +7,7 @@
       <td>Quantity</td>
       <td>+/-</td>
       <td>Subtotal</td>
+      <td>Remove</td>
     </tr>
     <tr>
   <% @items.each do |item| %>
@@ -15,6 +16,7 @@
       <td><%= @cart.quantity(item.id.to_s) %></td>
       <td><%= button_to  "+", checkout_increase_path(item_id: item.id)%><%= button_to  "- ", checkout_decrease_path(item_id: item.id)%></td>
       <td><%= number_to_currency(@cart.subtotal[item.id].to_f/100.00) %></td>
+      <td><%= button_to "Remove", checkout_remove_path(item_id: item.id)%></td>
     </tr>
   <% end %>
     <tfoot>
