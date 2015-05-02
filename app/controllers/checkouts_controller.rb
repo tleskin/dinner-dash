@@ -15,7 +15,7 @@ class CheckoutsController < ApplicationController
   end
 
   def confirmation
-    @items = @cart.find_items
+    @items = @cart.find_valid_items
     @item_quantities = @cart.contents
   end
 
