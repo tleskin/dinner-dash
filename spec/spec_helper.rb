@@ -1,4 +1,5 @@
 require 'factory_girl_rails'
+require 'simplecov'
 
 RSpec.configure do |config|
 
@@ -20,6 +21,10 @@ RSpec.configure do |config|
 
   config.before(:each, :js => true) do
     DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
+    SimpleCov.start
   end
 
   config.before(:each) do

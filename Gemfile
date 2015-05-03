@@ -15,6 +15,7 @@ gem 'bcrypt'
 gem 'database_cleaner'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'byebug'
@@ -26,6 +27,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'pry'
+  gem 'simplecov', :require => false
 end
 
 group :production do

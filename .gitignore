@@ -12,3 +12,7 @@
 !/log/.keep
 /tmp
 notes.md
+
+
+#Ignore simplecov test files
+coverage
