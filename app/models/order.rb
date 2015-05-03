@@ -8,4 +8,16 @@ class Order < ActiveRecord::Base
   validates :subtotal, presence: true
 
   enum status: %w(ordered completed cancelled)
+
+  def self.currently_ordered
+    ordered.count
+  end
+
+  def self.currently_completed
+    completed.count
+  end
+
+  def self.currently_cancelled
+    cancelled.count
+  end
 end

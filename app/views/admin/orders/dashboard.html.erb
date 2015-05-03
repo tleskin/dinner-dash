@@ -1,8 +1,24 @@
 <h1>Order Dashboard</h1>
 
-<div class="admin_orders">
+<div class="admin_status_list">
+  <table >
+      <tr>
+      <th>Ordered</th>
+      <th>Completed</th>
+      <th>Canceled</th>
+    </tr>
+    <tr>
+      <td><%= @orders.currently_ordered %></td>
+      <td><%= @orders.currently_completed %></td>
+      <td><%= @orders.currently_cancelled %></td>
+    </tr>
+  </table>
 
-<table border=2px, cell-padding="5">
+</div>
+
+<div class="admin_orders_list">
+
+<table id="first_table">
     <tr>
       <th>Order_id</th>
       <th>User_id</th>
