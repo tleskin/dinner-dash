@@ -3,7 +3,7 @@
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <div class="item_picture">
-      <img src="<%= @item.image %>" alt="Image for food item #{@item.name}"/>
+      <%= image_tag @item.image.url(:small) %>
       <div class="caption">
         <div class="item_show">
         <h2><%= @item.title %></h2>

@@ -81,3 +81,80 @@ h1 {
     margin: auto;
     width:100%;
 }
+
+#flash_notice {
+  text-style: bold;
+  text-color: red;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: cornsilk;
+  background-color: darkgrey;
+}
+
+#flash_errors{
+  text-style: bold;
+  text-color: red;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: cornsilk;
+  background-color: darkgrey;
+}
+
+#flash_messages{
+  text-style: bold;
+  text-color: red;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: cornsilk;
+  background-color: darkgrey;
+}
+#flash_message{
+  text-style: bold;
+  text-color: red;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: cornsilk;
+  background-color: darkgrey;
+}
+#flash_error{
+  text-style: bold;
+  text-color: red;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: cornsilk;
+  background-color: darkgrey;
+}
+
+table td {
+  border: 2px solid black;
+  padding: 10px;
+  align: center;
+}
+
+.admin_orders_list {
+  width: 65%;
+  padding: 5px;
+  border: 1px solid;
+  height: 300px;
+  overflow: auto;
+}
+
+.center_div {
+  padding: 3px;
+  margin-right: 10px;
+}

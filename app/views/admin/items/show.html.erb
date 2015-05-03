@@ -1,6 +1,7 @@
 <div class="admin_item_show">
 
 <h2><%= @item.title %></h2>
+<%= image_tag @item.image.url(:medium) %>
 <ul>
   <li><%= @item.description %></li>
   <li><%= number_to_currency(@item.price.to_f / 100.00) %></li>
