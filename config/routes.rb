@@ -3,6 +3,11 @@ Rails.application.routes.draw do
     resources :items, except: [:destroy]
     resources :categories
   end
+
+  namespace :user do
+    resources :orders, only: [:index, :show]
+  end
+
   resource :checkout, only: [:create, :update]
 
   resources :orders, only: [:create]
