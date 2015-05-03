@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "Admin" do
-  context "when visiting the orders page" do
+  context "when viewing orders" do
+    it "can see an individual order" do
 
-    it "can see all orders" do
       admin = create(:admin_user)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
@@ -26,10 +26,10 @@ RSpec.describe "Admin" do
       click_button "Confirm"
 
       visit admin_orders_dashboard_path
-      expect(page).to have_content("Order Dashboard")
-      expect(page).to have_content("Order_id")
-      expect(page).to have_content("User_id")
-      expect(page).to have_content("Subtotal")
+save_and_open_page
+      first(:link, 1).click
+
+      expect(page).to have_content("Order Information")
     end
   end
 end

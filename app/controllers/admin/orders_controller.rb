@@ -3,4 +3,7 @@ class Admin::OrdersController < Admin::BaseController
     @orders = Order.all
     render :dashboard
   end
+
+  def show
+  end
 end
