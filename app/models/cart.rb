@@ -27,16 +27,16 @@ class Cart
   end
 
   def decrease_quantity(item_id)
-    contents[item_id] -= 1 if contents[item_id] > 0 
+    contents[item_id] -= 1 if contents[item_id] > 0
   end
 
   def find_items
-    contents.keys.map {|item_id| Item.find(item_id)}
+    contents.keys.map { |item_id| Item.find(item_id)}
   end
 
   def find_valid_items
-    items = subtotal.reject {|id, total| total == 0}
-    items.keys.map {|item_id| Item.find(item_id)}
+    items = subtotal.reject { |_id, total| total == 0}
+    items.keys.map { |item_id| Item.find(item_id)}
   end
 
   def subtotal
