@@ -38,6 +38,7 @@ class UsersController < ApplicationController
       flash[:message] = "Account has been removed"
       redirect_to root_path
     else
+      flash[:error] = @user.errors.full_messages
       render @user
     end
   end

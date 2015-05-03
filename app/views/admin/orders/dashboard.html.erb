@@ -3,7 +3,6 @@
 <div class="admin_orders">
 
 <table border=2px, cell-padding="5">
-  <% @orders.each do |order| %>
     <tr>
       <th>Order_id</th>
       <th>User_id</th>
@@ -12,6 +11,7 @@
       <th>Last_Updated_At</th>
       <th>Status</th>
     </tr>
+  <% @orders.each do |order| %>
     <tr>
       <td><%= link_to "#{order.id}", order_path(order) %></td>
       <td><%= order.user_id %></td>

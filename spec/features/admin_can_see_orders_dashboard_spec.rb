@@ -23,15 +23,14 @@ RSpec.describe "Admin" do
       visit checkout_path
 
       click_button "Checkout"
+      click_button "Confirm"
 
       visit admin_orders_dashboard_path
 
       expect(page).to have_content("Order Dashboard")
-      within("table") do
-        expect(page).to have_content("Order_id")
-        expect(page).to have_content("User_id")
-        expect(page).to have_content("Subtotal")
-      end
+      expect(page).to have_content("Order_id")
+      expect(page).to have_content("User_id")
+      expect(page).to have_content("Subtotal")
     end
   end
 end

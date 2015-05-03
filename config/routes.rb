@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resource :checkout, only: [:create, :update]
 
   resources :orders, only: [:create, :show]
+
   get "admin/orders/dashboard", to: "admin/orders#dashboard"
   get "checkout/confirmation", to: "checkouts#confirmation"
   post "checkout/increase", to: "checkouts#increase"

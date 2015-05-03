@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
   def create
-    @order = Order.new(order_params)
-    if @order.save
+    order = Order.new(order_params)
+    if order.save
+      @cart.contents.each_pair do |item_id, quantity|
+        order.order_items.create(item_id: item_id.to_i, quantity: quantity)
+      end
+      order.order_items.create()
       flash[:notice] = "Order Successfully Placed"
       redirect_to current_user
     else

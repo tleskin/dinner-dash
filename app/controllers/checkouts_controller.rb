@@ -4,7 +4,7 @@ class CheckoutsController < ApplicationController
     item = Item.find(params[:item_id])
     @cart.add_item(item.id)
     session[:cart] = @cart.contents
-    flash[:notice] = "you know have #{pluralize(@cart.count_of(item), item.title)}"
+    flash[:notice] = "You now have #{pluralize(@cart.count_of(item.id), item.title)} in your cart.  "
     redirect_to items_path
   end
 
@@ -14,7 +14,6 @@ class CheckoutsController < ApplicationController
   end
 
   def confirmation
-    order = Order.new(user_id: params[:order][:user_id], subtotal: params[:order][:subtotal])
     @items = @cart.find_items
     @item_quantities = @cart.contents
   end
