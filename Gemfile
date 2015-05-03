@@ -15,6 +15,7 @@ gem 'bcrypt'
 gem 'database_cleaner'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'byebug'

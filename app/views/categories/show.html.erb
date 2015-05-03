@@ -1,0 +1,9 @@
+<%= @category.name %>
+<% @category.items.each do |item| %>
+  <div class="item_title">
+  <%= item.title %>
+  </div>
+  <div class="description">
+  <%= item.description %>
+  </div>
+<% end %>
