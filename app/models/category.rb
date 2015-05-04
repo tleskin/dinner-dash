@@ -7,6 +7,6 @@ class Category < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   def can_destroy?
-    self.items.count < 1
+    items.count < 1
   end
 end

@@ -26,7 +26,7 @@ class Order < ActiveRecord::Base
   end
 
   def total
-    self.subtotal
+    subtotal
   end
 
   def show_status

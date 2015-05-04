@@ -40,10 +40,10 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.friendly.find(params[:id])
     if @category.can_destroy? && @category.destroy
       flash[:message] = "Category successfully deleted!"
-      redirect_to admin_categories_path({id: @category.id})
+      redirect_to admin_categories_path(id: @category.id)
     else
       flash[:error] = @category.errors.full_messages.join(", ")
-      redirect_to admin_categories_path({id: @category.id})
+      redirect_to admin_categories_path(id: @category.id)
     end
   end
 
