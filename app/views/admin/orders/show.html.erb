@@ -1,3 +1,5 @@
+<div class="admin_order_show">
+
 <h1>Order Information</h1>
 
 <h3>Purchaser: <%= @order.user.name %> - email: <%= @order.user.email %></h3>
@@ -32,3 +34,4 @@
       <li><%= link_to "Completed", admin_order_update_path({order_id: @order.id, status: "completed"}), method: "post" %></li>
       <li><%= link_to "Cancelled", admin_order_update_path({order_id: @order.id, status: "cancelled"}), method: "post" %></li>
     </ul>
+</div>
