@@ -1,0 +1,24 @@
+<h1>Order Details</h1>
+
+<div class="user_order_list">
+<div class="center_div">
+<table id="first_table">
+    <tr>
+      <th>Order Item Number</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  <% @order.order_items.each do |order_item| %>
+    <tr>
+      <td><%= link_to  "#{order_item.item.title}", item_path(order_item.item.id) %></td>
+      <td><%= order_item.quantity %></td>
+      <td><%= number_to_currency(order_item.item.price/100.00) %></td>
+
+    </tr>
+  <% end %>
+  <td>total</td>
+  <td><%= number_to_currency(@order.subtotal) %></td>
+</table>
+</div>
+</div>
+</ul>

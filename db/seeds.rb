@@ -24,7 +24,7 @@ Category.create(name: "Large Plates", description: "Ginormous plates that will f
 Category.create(name: "Desert Plates")
 Category.create(name: "Hipster Drinks")
 
-Item.create(title: "Give Me a Beat", description: "You will get one Beet")
+Item.create(title: "Give Me a Beat", description: "You will get one Beet", price: 300)
 Item.create(title: "Bearded Prawns", description: "Panko crusted - Head On - Deep fried prawns.", price: 500)
 Item.create(title: "Oil-Spill Calamari", description: "Served with spicy soy-sauce and squid ink -O- the day.", price: 700)
 Item.create(title: "Egg-Plant Quinoa", description: "'Herb'- crusted eggplant, served with that special sauce", price: 1000)
@@ -41,7 +41,7 @@ Item.create(title: "", description: "Grass-fed all soy free range Breadstick", p
 Item.create(title: "Vintage Venison Bites", description: "35 year old venison chuncked into ", price: 5000)
 Item.create(title: "Da Freshest Seaweed", description: "Local caught seaweed", price:2300)
 Item.create(title: "Pierced Pancakes", description: "Fluffy and pierced.", price: 4400)
-Item.create(title: "Played out Panini", description: "All you would expect from a good old panini", price: 1500)
+Item.create(title: "Played out Panini", description: "All you would expect from a panini made by grandma", price: 1500)
 Item.create(title: "Mixed Tape Macarroni", description: "Chef put some work on this one, put it on and check it out", price: 4400)
 Item.create(title: "Plaid Bass", description: "more hip than the striped bass", price:9000)
 Item.create(title: "Anti-Frack-Fries", description: "You think you were pissed with you heard the started a fracking stie in your old home town? Try running out of these fries.", price:5400)
