@@ -8,8 +8,7 @@ class Item < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png"]
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
-  validates :price, presence: true
-  validate  :has_categories?
+  validates :price, presence: true, numericality: { greater_than: 0}
 
   has_many :item_categories
   has_many :categories, through: :item_categories
@@ -27,6 +26,6 @@ class Item < ActiveRecord::Base
   end
 
   def has_categories?
-    errors.add :base, "Item must belong to at least one category." if categories.count < 1
+    errors.add :base, "Item must belong to at least one category" if categories.count == 0
   end
 end
