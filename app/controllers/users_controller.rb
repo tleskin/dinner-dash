@@ -51,6 +51,6 @@ class UsersController < ApplicationController
                                  :email,
                                  :password,
                                  :password_confirmation
-                        .r        )
+                                )
   end
 end
