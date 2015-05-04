@@ -9,6 +9,7 @@ class Item < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
   validates :price, presence: true
+  validate  :has_categories?
 
   has_many :item_categories
   has_many :categories, through: :item_categories
@@ -23,5 +24,9 @@ class Item < ActiveRecord::Base
     else
       "retired"
     end
+  end
+
+  def has_categories?
+    errors.add :base, "Item must belong to at least one category." if categories.count < 1
   end
 end
