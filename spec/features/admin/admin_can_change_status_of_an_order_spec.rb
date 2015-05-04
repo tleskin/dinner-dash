@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Admin" do
   context "when viewing orders" do
-    it "can see an individual order" do
+    it "can change status of an individual order" do
 
       admin = create(:admin_user)
 
@@ -26,9 +26,11 @@ RSpec.describe "Admin" do
       click_button "Confirm"
 
       visit admin_orders_dashboard_path
-      first(:link, 1).click
 
-      expect(page).to have_content("Order Information")
+      first(:link, 1).click
+      click_link("Completed")
+
+      expect(page).to have_content("Current Status: completed")
     end
   end
 end
