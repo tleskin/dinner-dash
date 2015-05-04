@@ -1,14 +1,14 @@
 class User < ActiveRecord::Base
+  has_secure_password
   has_attached_file :picture, styles: {micro: '50x50',
-                                     thumb: '100x100',
-                                     small: '200x200',
-                                     medium: '300x300'
-                                   }
+                                       thumb: '100x100',
+                                       small: '200x200',
+                                       medium: '300x300'
+                                     }
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 
 
-  has_secure_password
   has_many :orders, dependent: :destroy
   validates :name, length: { in: 2..32 }
   validates :username, presence: true, uniqueness: true

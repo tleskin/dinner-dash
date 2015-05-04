@@ -15,5 +15,13 @@ class Item < ActiveRecord::Base
   has_many :order_items
   has_many :orders, through: :order_items
 
-  scope :active, -> {where(status: true)}
+  scope :active, -> { where(status: true) }
+
+  def show_status
+    if status == true
+      "active"
+    else
+      "retired"
+    end
+  end
 end
