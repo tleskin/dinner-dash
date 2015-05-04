@@ -5,13 +5,11 @@ RSpec.describe "User view" do
 
     it 'can view order page' do
       user = create(:default_user)
-      5.times do |x|
-        create(:item, title: "item#{x}")
-      end
+      item = create(:item, title: "chips")
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit items_path
-      click_link "item1"
+      click_link "chips"
       first(:button, "Add To Cart").click
       visit checkout_path
       click_button "Checkout"
@@ -21,9 +19,8 @@ RSpec.describe "User view" do
       click_button "Orders"
 
       expect(page).to have_content("Orders")
-      click_link "1"  
-      save_and_open_page
-      expect(page).to have_content("item1")
+      visit user_order_path(item.orders.first.id)
+      expect(page).to have_content("chips")
       expect(page).to have_content("Order Details")
     end
 

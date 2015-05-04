@@ -25,6 +25,7 @@ RSpec.describe "Admin can add categories to idea" do
       expect(page).to have_content("curries")
       expect(page).to have_content("breakfast")
     end
+
   end
 
 end

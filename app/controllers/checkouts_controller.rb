@@ -18,15 +18,15 @@ class CheckoutsController < ApplicationController
     @item_quantities = @cart.contents
   end
 
-  def update
-    if params[:change] == "increase"
-      @cart.increase_quantity(params[:item_id])
-      redirect_to checkout_path
-    elsif params[:change] == "decrease"
-      @cart.decrease_quantity(params[:item_id])
-      redirect_to checkout_path
-    end
-  end
+  # def update
+  #   if params[:change] == "increase"
+  #     @cart.increase_quantity(params[:item_id])
+  #     redirect_to checkout_path
+  #   elsif params[:change] == "decrease"
+  #     @cart.decrease_quantity(params[:item_id])
+  #     redirect_to checkout_path
+  #   end
+  # end
 
   def increase
     @cart.increase_quantity(params[:item_id])
