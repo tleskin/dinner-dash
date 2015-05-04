@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
                                        thumb: '100x100',
                                        small: '200x200',
                                        medium: '300x300'
-                                     }
+                                     }, default_url: "Hipster_with_glasses.jpg"
 
   validates_attachment_content_type :picture, content_type: ["image/jpg", "image/jpeg", "image/png"]
 
