@@ -21,8 +21,8 @@ RSpec.describe "User view" do
       click_button "Orders"
 
       expect(page).to have_content("Orders")
-
-      click_link "1"
+      click_link "1"  
+      save_and_open_page
       expect(page).to have_content("item1")
       expect(page).to have_content("Order Details")
     end

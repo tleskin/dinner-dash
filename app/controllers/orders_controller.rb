@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
     if order.save
       @cart.contents.each_pair do |item_id, quantity|
         order.order_items.create(item_id: item_id.to_i, quantity: quantity)
+      @cart.clear 
       end
       order.order_items.create()
       flash[:notice] = "Order Successfully Placed"
