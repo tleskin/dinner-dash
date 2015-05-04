@@ -1,0 +1,21 @@
+<h1>Order Details</h1>
+
+<div class="user_order_list">
+<div class="center_div">
+<table id="first_table">
+    <tr>
+      <th>Order_item</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+  <% @order.order_items.each do |order_item| %>
+    <tr>
+      <td><%= order_item.item.title %></td>
+      <td><%= order_item.quantity %></td>
+      <td><%= order_item.item.price %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+</div>
+</ul>

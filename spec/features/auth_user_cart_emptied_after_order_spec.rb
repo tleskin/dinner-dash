@@ -1,9 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "User view" do
-  context 'with valid attributes' do
-
-    it 'can view order page' do
+RSpec.describe "Cart after checkout" do
+  it "cart is cleared after checkout" do
       user = create(:default_user)
       5.times do |x|
         create(:item, title: "item#{x}")
@@ -14,18 +12,11 @@ RSpec.describe "User view" do
       click_link "item1"
       first(:button, "Add To Cart").click
       visit checkout_path
+      expect(page).to have_content("item1")
       click_button "Checkout"
       click_button "Confirm Order"
 
-      visit user_path(user)
-      click_button "Orders"
-
-      expect(page).to have_content("Orders")
-
-      click_link "1"
-      expect(page).to have_content("item1")
-      expect(page).to have_content("Order Details")
-    end
-
+      visit checkout_path
+      expect(page).to_not have_content("item1")
   end
 end

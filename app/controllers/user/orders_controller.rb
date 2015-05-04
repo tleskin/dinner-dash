@@ -1,8 +1,9 @@
 class User::OrdersController < User::BaseController
   def index
-    @orders = Order.where(user_id: current_user.id)
+    @orders = current_user.orders
   end
 
   def show
+    @order = current_user.orders.find(params[:id])
   end
 end
