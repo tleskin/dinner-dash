@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resource :checkout, only: [:create, :update]
 
   resources :orders, only: [:create]
-  resources :categories, only: [:show]
+  resources :categories, only: [:show, :index]
 
   get "admin/orders/dashboard", to: "admin/orders#dashboard"
   get "admin/order", to: "admin/orders#show"
