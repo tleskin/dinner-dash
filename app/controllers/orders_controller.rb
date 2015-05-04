@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
       flash[:error] = "Grow your beard, try again"
       redirect_to checkout_path
     end
+    @cart.clear 
   end
 
   private

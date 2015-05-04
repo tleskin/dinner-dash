@@ -58,4 +58,8 @@ class Cart
       OrderItems.new()
     end
   end
+
+  def clear
+    contents.clear
+  end
 end

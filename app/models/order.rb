@@ -9,6 +9,8 @@ class Order < ActiveRecord::Base
 
   enum status: %w(ordered completed cancelled paid)
 
+  default_scope { order(created_at: :desc)}
+
   def self.number_currently_ordered
     ordered.count
   end

@@ -1,16 +1,10 @@
+<div class="admin_order_show">
+
 <h1>Order Information</h1>
 
 <h3>Purchaser: <%= @order.user.name %> - email: <%= @order.user.email %></h3>
+  <h4>Ordered: <%= @order.date_of_order(@order.created_at) %></h4>
     <h4>Current Status: <%= @order.show_status %></h4>
-    <p>
-      Change Order's Status:
-    </p>
-    <ul>
-      <li><%= link_to "Paid", admin_order_update_path({order_id: @order.id, status: "paid"}), method: :post %></li>
-      <li><%= link_to "Completed", admin_order_update_path({order_id: @order.id, status: "completed"}), method: "post" %></li>
-      <li><%= link_to "Cancelled", admin_order_update_path({order_id: @order.id, status: "cancelled"}), method: "post" %></li>
-    </ul>
-    <h4>Ordered: <%= @order.date_of_order(@order.created_at) %></h4>
 
 <table>
   <tr>
@@ -30,4 +24,14 @@
   <tr>
     <td>Order Total - <%= number_to_currency(@order.total) %> </td>
   </tr>
-</table>
+</table><br><br>
+
+    <p>
+      Change Order's Status:
+    </p>
+    <ul>
+      <li><%= link_to "Paid", admin_order_update_path({order_id: @order.id, status: "paid"}), method: :post %></li>
+      <li><%= link_to "Completed", admin_order_update_path({order_id: @order.id, status: "completed"}), method: "post" %></li>
+      <li><%= link_to "Cancelled", admin_order_update_path({order_id: @order.id, status: "cancelled"}), method: "post" %></li>
+    </ul>
+</div>
