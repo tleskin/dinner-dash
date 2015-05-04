@@ -8,15 +8,15 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.friendly.find(params[:id])
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @category = Category.friendly.find(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
+    @category = Category.friendly.find(params[:id])
     if @category.update(category_params)
       flash[:message] = "Category has been updated!"
       redirect_to admin_categories_path
@@ -37,10 +37,14 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
-    flash[:message] = "Category successfully deleted!"
-    redirect_to admin_categories_path
+    @category = Category.friendly.find(params[:id])
+    if @category.can_destroy? && @category.destroy
+      flash[:message] = "Category successfully deleted!"
+      redirect_to admin_categories_path(id: @category.id)
+    else
+      flash[:error] = @category.errors.full_messages.join(", ")
+      redirect_to admin_categories_path(id: @category.id)
+    end
   end
 
   private
