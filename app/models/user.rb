@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
                                        medium: '300x300'
                                      }
 
-  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :picture, content_type: ["image/jpg", "image/jpeg", "image/png"]
 
 
   has_many :orders, dependent: :destroy
