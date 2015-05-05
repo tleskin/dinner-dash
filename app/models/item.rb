@@ -15,7 +15,6 @@ class Item < ActiveRecord::Base
   has_many :order_items
   has_many :orders, through: :order_items
 
-
   scope :active, -> { where(status: true) }
 
   def show_status
@@ -27,6 +26,6 @@ class Item < ActiveRecord::Base
   end
 
   def unique_categories
-    errors.add :base, "Item already belongs to that category" if categories.each{ |category| categories.include?(category)}
+    errors.add :base, "Item already belongs to that category" if categories.each { |category| categories.include?(category) }
   end
 end
