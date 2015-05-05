@@ -1,10 +1,15 @@
 <%= form_for(@user, url: user_path, html: {multipart: true}) do |f| %>
-  <%= f.text_field :name, placeholder: "Name" %>
-  <%= f.text_field :username, placeholder: "Username" %>
-  <%= f.text_field :email, placeholder: "Email" %>
-  <%= f.password_field :password, placeholder: "Password" %>
-  <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
-  <%= f.label :picture, "Attach a Picture" %><br>
-  <%= f.file_field :picture %>
-  <%= f.submit %>
+  <p><%= f.text_field :name, placeholder: "Name" %></p>
+  <p><%= f.text_field :username, placeholder: "Username" %></p>
+  <p><%= f.text_field :email, placeholder: "Email" %></p>
+  <p><%= f.password_field :password, placeholder: "Password" %></p>
+  <p><%= f.password_field :password_confirmation, placeholder: "Password confirmation" %></p>
+  <p><%= f.label :picture, "Attach a Picture" %></p>
+  <p><%= f.file_field :picture %></p>
+  <p><%= f.submit %></p>
 <% end %>
+
+<br><br>
+
+Already a user?
+<%= button_to "Login", login_path, method: :get %>

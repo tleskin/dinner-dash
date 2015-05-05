@@ -1,18 +1,24 @@
 class Admin::ItemsController < Admin::BaseController
-  def new
-    @item = Item.new
-  end
-
   def index
     @items = Item.all
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
+  def new
+    @categories = Category.all
+    @item = Item.new
+  end
+
   def create
     @item = Item.new(item_params)
-
     if @item.save
-      category_collection = params[:item][:categories].reject(&:empty?)
-      @item.categories << category_collection.map {|id| Category.find(id.to_i)}
+      categories = params[:item][:category_ids].reject(&:empty?)
+      categories.each do |id|
+        @item.categories << Category.find(id)
+      end
       flash[:notice] = "#{@item.title} created!"
       redirect_to admin_item_path(@item)
     else
@@ -21,25 +27,24 @@ class Admin::ItemsController < Admin::BaseController
     end
   end
 
-  def show
-    @item = Item.find(params[:id])
-  end
-
   def edit
     @item = Item.find(params[:id])
+    @categories = Category.all
   end
 
   def update
-    category_collection = params[:item][:categories].reject {|x| x.empty?}
     @item = Item.find(params[:id])
-    @item.categories << category_collection.map { |id| Category.find(id.to_i) }
-
+    categories = params[:item][:category_ids].reject(&:empty?)
     if @item.update(item_params)
+      @item.categories.destroy_all
+      categories.each do |id|
+        @item.categories << Category.find(id)
+      end
       flash[:notice] = "#{@item.title} Updated"
       redirect_to admin_item_path(@item)
     else
       flash[:error] = @item.errors.full_messages.join(", ")
-      redirect_to admin_item_path(@item)
+      render :edit
     end
   end
 
@@ -50,7 +55,7 @@ class Admin::ItemsController < Admin::BaseController
                                  :description,
                                  :price,
                                  :status,
-                                 :categories,
-                                 :image)
+                                 :image,
+                                 :category_ids)
   end
 end
