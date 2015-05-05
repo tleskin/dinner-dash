@@ -12,6 +12,7 @@ RSpec.describe 'Users' do
       visit items_path
       click_link "item1"
       first(:button, "Add To Cart").click
+      visit items_path
       click_link "item2"
       first(:button, "Add To Cart").click
       visit checkout_path
