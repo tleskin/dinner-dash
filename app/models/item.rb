@@ -9,7 +9,6 @@ class Item < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :categories, length: { minimum: 1 }
 
   has_many :item_categories
   has_many :categories, through: :item_categories
@@ -17,7 +16,6 @@ class Item < ActiveRecord::Base
   has_many :orders, through: :order_items
 
   scope :active, -> { where(status: true) }
-  scope :retired, -> { where(status: false) }
 
   def show_status
     if status == true
