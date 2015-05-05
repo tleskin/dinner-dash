@@ -24,4 +24,8 @@ class Item < ActiveRecord::Base
       "retired"
     end
   end
+
+  def unique_categories
+    errors.add :base, "Item already belongs to that category" if categories.each { |category| categories.include?(category) }
+  end
 end
