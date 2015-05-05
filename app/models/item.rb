@@ -26,7 +26,19 @@ class Item < ActiveRecord::Base
     end
   end
 
+  def retired
+    status == false
+  end
+
+  def active
+    status == true
+  end
+
   def unique_categories
     errors.add :base, "Item already belongs to that category" if categories.each { |category| categories.include?(category) }
+  end
+
+  def empty_categories?
+    params[:item][:category_ids].reject(&:empty?).empty?
   end
 end

@@ -4,4 +4,8 @@ class OrderItem < ActiveRecord::Base
   validates :order_id, presence: true
   validates :item_id, presence: true
   validates :quantity, presence: true
+
+  def subtotal
+    quantity * item.price
+  end
 end

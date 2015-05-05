@@ -3,7 +3,7 @@
   <%= f.text_field :description, placeholder: "Item description" %>
   <%= f.text_field :price, placeholder: "Price" %>
   <%= f.collection_check_boxes(:category_ids, @categories, :id, :name) %>
-  <%= f.select :status, options_for_select(%w(active retired)), selected: @item.status %>
+  <%= f.select :status, options_for_select([true, false]), selected: @item.status %>
   <%= f.label :image %><br>
   <%= f.file_field :image %>
   <%= f.submit "Submit Item" %>

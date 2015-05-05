@@ -12,12 +12,12 @@ class OrdersController < ApplicationController
       flash[:error] = "Grow your beard, try again"
       redirect_to checkout_path
     end
-    @cart.clear 
+    @cart.clear
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:user_id, :subtotal)
+    params.require(:order).permit(:user_id, :subtotal, :item_id)
   end
 end
