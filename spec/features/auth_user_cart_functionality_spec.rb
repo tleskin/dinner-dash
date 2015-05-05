@@ -30,8 +30,10 @@ RSpec.describe "Cart after checkout" do
     visit items_path
     click_link "item1"
     first(:button, "Add To Cart").click
+    visit items_path
     click_link "item2"
     first(:button, "Add To Cart").click
+    visit items_path
     click_link "item3"
     first(:button, "Add To Cart").click
     visit checkout_path
@@ -57,13 +59,16 @@ RSpec.describe "Cart after checkout" do
     visit items_path
     click_link "item1"
     first(:button, "Add To Cart").click
+    visit items_path
     click_link "item3"
     first(:button, "Add To Cart").click
 
     visit checkout_path
-    expect(page).to_not have_content("2")
+    expect(page).to_not have_content("4")
     first(:button, "+").click
-    expect(page).to have_content("2")
+    first(:button, "+").click
+    first(:button, "+").click
+    expect(page).to have_content("4")
   end
 
   it "item in cart can be decreased" do
@@ -76,18 +81,22 @@ RSpec.describe "Cart after checkout" do
     visit items_path
     click_link "item1"
     first(:button, "Add To Cart").click
+    visit items_path
     click_link "item3"
     first(:button, "Add To Cart").click
 
     visit checkout_path
-    expect(page).to_not have_content("2")
-    first(:button, "+").click
-    expect(page).to have_content("2")
+    within("table") do
+      expect(page).to_not have_content("2")
+      first(:button, "+").click
+    end
 
+    expect(page).to have_content("2")
     first(:button, "-").click
     first(:button, "-").click
     expect(page).to_not have_content("2")
     expect(page).to have_content("0.00")
+   
   end
 
   it "quantity in cary cannot be below 0" do
@@ -100,6 +109,7 @@ RSpec.describe "Cart after checkout" do
     visit items_path
     click_link "item1"
     first(:button, "Add To Cart").click
+    visit items_path
     click_link "item3"
     first(:button, "Add To Cart").click
 
