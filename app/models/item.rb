@@ -9,7 +9,7 @@ class Item < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :categories, :length => { :minimum => 1}
+  validates :categories, length: { minimum: 1 }
 
   has_many :item_categories
   has_many :categories, through: :item_categories
