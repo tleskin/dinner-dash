@@ -2,18 +2,23 @@
 
 <div class="user_order_list">
 <div class="center_div">
+
+<h4>Ordered: <%= @order.date_of_order(@order.created_at) %></h4>
+<h4>Current Status: <%= @order.show_status %></h4>
+
 <table id="first_table">
     <tr>
-      <th>Order Item Number</th>
+      <th>Item</th>
       <th>Quantity</th>
       <th>Price</th>
+      <th>Subtotal</th>
     </tr>
   <% @order.order_items.each do |order_item| %>
     <tr>
       <td><%= link_to  "#{order_item.item.title}", item_path(order_item.item.id) %></td>
       <td><%= order_item.quantity %></td>
       <td><%= number_to_currency(order_item.item.price/100.00) %></td>
-
+      <td><%= number_to_currency(order_item.subtotal/100.00) %></td>
     </tr>
   <% end %>
   <td>total</td>
