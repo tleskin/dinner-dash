@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "Cart after checkout" do
-  it "cart is cleared after checkout" do
+RSpec.describe "retired item" do
+  it "cannot be added to cart" do
     admin = create(:admin_user)
     item = create(:item, title: "item1")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
@@ -9,16 +9,14 @@ RSpec.describe "Cart after checkout" do
     visit admin_items_path
 
     click_link "item1"
+    click_link 'Edit'
     select "retired", from: "item[status]"
-
+    click_button "Submit Item"
+    
     visit item_path(item)
-    click_link "item1"
+
     first(:button, "Add To Cart").click
     visit checkout_path
-    expect(page).to have_content("item1")
-    click_button "Checkout"
-    click_button "Confirm Order"
-
-    visit checkout_path
-    expect(page).to_not have_content("item1")
+    expect(page).not_to have_content("item1")
   end
+end
