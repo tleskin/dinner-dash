@@ -3,12 +3,12 @@ class Item < ActiveRecord::Base
                                      thumb: '100x100',
                                      small: '200x200',
                                      medium: '300x300'
-                                   }, default_url: "fork_knife.jpg"
+                                   }, default_url: "fork_knife_thumb.jpg"
 
   validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png"]
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
   validates :description, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { greater_than: 0}
 
   has_many :item_categories
   has_many :categories, through: :item_categories
@@ -16,6 +16,11 @@ class Item < ActiveRecord::Base
   has_many :orders, through: :order_items
 
   scope :active, -> { where(status: true) }
+  before_save :convert_price
+
+  def convert_price
+    price * 100
+  end
 
   def show_status
     if status == true
@@ -23,5 +28,9 @@ class Item < ActiveRecord::Base
     else
       "retired"
     end
+  end
+
+  def has_categories?
+    errors.add :base, "Item must belong to at least one category" if categories.count == 0
   end
 end
