@@ -17,6 +17,7 @@ class Item < ActiveRecord::Base
 
   scope :active, -> { where(status: true) }
 
+
   def show_status
     if status == true
       "active"

@@ -25,7 +25,7 @@ RSpec.describe "unauthorized user" do
       click_link_or_button "Create User"
 
       visit checkout_path
-      
+
       click_button "Checkout"
 
 
