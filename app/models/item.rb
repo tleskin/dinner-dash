@@ -16,6 +16,11 @@ class Item < ActiveRecord::Base
   has_many :orders, through: :order_items
 
   scope :active, -> { where(status: true) }
+  before_save :convert_price
+
+  def convert_price
+    price * 100
+  end
 
   def show_status
     if status == true
