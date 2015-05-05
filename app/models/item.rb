@@ -16,7 +16,6 @@ class Item < ActiveRecord::Base
   has_many :orders, through: :order_items
 
   scope :active, -> { where(status: true) }
-  scope :retired, -> { where(status: false) }
 
   def show_status
     if status == true
