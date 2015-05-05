@@ -3,7 +3,7 @@ class Item < ActiveRecord::Base
                                      thumb: '100x100',
                                      small: '200x200',
                                      medium: '300x300'
-                                   }, default_url: "fork_knife.jpg"
+                                   }, default_url: "fork_knife1.jpg"
 
   validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png"]
   validates :title, presence: true
