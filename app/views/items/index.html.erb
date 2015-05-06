@@ -1,7 +1,11 @@
 <h2>All Menu Items</h2>
 
-<ul>
+<div class="index">
+<ul class="row">
+
   <% @items.each do |item| %>
-    <li><%= link_to "#{item.title}", item_path(item) %></li>
+    <li><h3><%= item.image.url(:thumb) %></h3>
+    <h4><%= link_to "#{item.title}", item_path(item) %></h4></li>
   <% end %>
 </ul>
+</div>
