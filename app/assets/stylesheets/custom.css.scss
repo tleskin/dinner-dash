@@ -159,26 +159,26 @@ table td {
   height: 500px;
   overflow: auto;
 }
-// .center_div {
-//   font-family: monospace;
-//   padding: 3px;
-//   margin-right: 10px;
-// }
-//
-// .dropdown-menu li:hover .sub-menu {
-//   font-family: monospace;
-//     visibility: visible;
-// }
-//
-// .dropdown:hover .dropdown-menu {
-//   font-family: monospace;
-//     display: block;
-// }
-//
-// .account{
-//     float:left
-// }
-//
+.center_div {
+  font-family: monospace;
+  padding: 3px;
+  margin-right: 10px;
+}
+
+.dropdown-menu li:hover .sub-menu {
+  font-family: monospace;
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+  font-family: monospace;
+    display: block;
+}
+
+.account{
+    float:left
+}
+
 .admin_orders_list h3 {
   font-family: monospace;
   text-align: center;
@@ -190,12 +190,17 @@ table td {
 //   margin-left: 5%;
 // }
 //
-// .index {
-//   float: left;
-//   list-style: none;
-//   margin-left: 10px;
-// }
-//
+.index {
+  text-align: center;
+}
+
+.index {
+  float: left;
+  align: center;
+  list-style: none;
+  margin-left: 37%;
+}
+
 .container h1 {
   text-align: center;
 }
@@ -261,4 +266,9 @@ table td {
 .admin-links p:hover {
   background-color: grey;
   font-color: white;
+}
+
+.collection {
+  margin-left: -100px;
+  list-style: vertical;
 }
