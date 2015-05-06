@@ -10,15 +10,15 @@
   <% @items.each do |item| %>
     <tr>
       <td><%= item.title %></td>
-      <td><%= number_to_currency(item.price) %></td>
+      <td><%= number_to_currency(item.price.to_f / 100.00) %></td>
       <td><%= @cart.quantity(item.id.to_s) %></td>
-      <td><%= number_to_currency(@cart.subtotal[item.id]) %></td>
+      <td><%= number_to_currency(@cart.subtotal[item.id].to_f / 100.00) %></td>
     </tr>
   <% end %>
     <tfoot>
       <tr>
         <td>Total</td>
-        <td><%= number_to_currency(@cart.total) %></td>
+        <td><%= number_to_currency(@cart.total.to_f / 100.00) %></td>
       </tr>
     </tfoot>
   </table>

@@ -10,9 +10,9 @@ RSpec.describe "retired item" do
 
     click_link "item1"
     click_link 'Edit'
-    select "retired", from: "item[status]"
+    page.choose "item[status]", match: :first 
     click_button "Submit Item"
-    
+
     visit item_path(item)
 
     first(:button, "Add To Cart").click

@@ -1,10 +1,15 @@
+  <div class="form">
+
   <%= form_for([:admin, @item]) do |f| %>
-  <%= f.text_field :title, placeholder: "Item title"  %>
-  <%= f.text_field :description, placeholder: "Item description" %>
-  <%= f.text_field :price, placeholder: "Price" %>
-  <%= f.collection_check_boxes(:category_ids, @categories, :id, :name) %>
-  <%= f.select :status, options_for_select([true, false]), selected: @item.status %>
-  <%= f.label :image %><br>
-  <%= f.file_field :image %>
-  <%= f.submit "Submit Item" %>
+    <div><%= f.text_field :title, placeholder: "Item title"  %><br></div><br>
+    <div><%= f.text_field :description, placeholder: "Item description" %><br></div><br>
+    <div><%= f.text_field :price, placeholder: "Price" %><br></div><br>
+        <div class="collection"><%= f.collection_check_boxes(:category_ids, @categories, :id, :name) %><br></div><br>
+        <div><%= f.label :status %><br></div><br>
+  <div>Retired <%= f.radio_button :status, false  %><br></div><br>
+  <div>Active <%= f.radio_button :status, true  %><br></div><br>
+  <div><%= f.label "Upload an Image"%><br></div><br>
+  <div><%= f.file_field :image %><br></div><br>
+  <div><%= f.submit "Submit Item" %></div><br>
 <% end %>
+  </div>

@@ -12,16 +12,19 @@ RSpec.describe "admin capabilities" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit admin_dashboard_path
-      click_link "All Items"
 
+      within(".dashboard") do
+        click_link "All Items"
+      end
+      
       expect(current_path).to eq(admin_items_path)
 
       click_link "Item1"
       click_link "Edit"
 
-      select "retired", from: "item[status]"
+      page.choose "item[status]", match: :first
       click_button "Submit Item"
-      
+
       expect(page).to have_content("retired")
     end
   end

@@ -3,12 +3,13 @@ class Item < ActiveRecord::Base
                                      thumb: '100x100',
                                      small: '200x200',
                                      medium: '300x300'
-                                   }, default_url: "fork_knife.jpg"
+                                   }, default_url: "fork_knife1.jpg"
 
   validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png"]
+  
   validates :title, presence: true
   validates :description, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { greater_than: 0 }
 
   has_many :item_categories
   has_many :categories, through: :item_categories
@@ -40,5 +41,13 @@ class Item < ActiveRecord::Base
 
   def empty_categories?
     params[:item][:category_ids].reject(&:empty?).empty?
+  end
+
+  def modify_status(status_param)
+    if status_param == "false"
+      status = false
+    else
+      status = true
+    end
   end
 end

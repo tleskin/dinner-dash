@@ -16,3 +16,6 @@ notes.md
 
 #Ignore simplecov test files
 coverage
+
+# Ignore application configuration
+/config/application.yml
