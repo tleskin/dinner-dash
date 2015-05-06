@@ -6,10 +6,9 @@ class OrdersController < ApplicationController
         order.order_items.create(item_id: item_id.to_i, quantity: quantity)
       end
       order.order_items.create()
-      # require 'pry'; binding.pry
       UserNotifier.order_confirmation(Order.find(order.id)).deliver_now
       flash[:notice] = "Order Successfully Placed"
-      redirect_to orders_payment_path 
+      redirect_to orders_payment_path
     else
       flash[:error] = "Grow your beard, try again"
       redirect_to checkout_path
