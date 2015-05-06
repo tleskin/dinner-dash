@@ -29,7 +29,7 @@ RSpec.describe "Admin" do
       expect(page).to have_content("Order Dashboard")
       expect(page).to have_content("Order_id")
       expect(page).to have_content("User_id")
-      expect(page).to have_content("Ordered")
+      expect(page).to have_content("ordered")
       expect(page).to have_content("Canceled")
       expect(page).to have_content("Completed")
     end

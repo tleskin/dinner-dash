@@ -75,64 +75,71 @@ h1 {
 #flash_notice {
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 
 #flash_errors{
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 
 #flash_messages{
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 #flash_message{
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 #flash_error{
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
+}
+
+#flash_twitter {
+  font-family: monospace;
+  text-style: bold;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: #fff8dc;
+  background-color: #ff0000;
 }
 
 table td {
@@ -266,6 +273,14 @@ table td {
 .admin-links p:hover {
   background-color: grey;
   font-color: white;
+}
+
+.twitter-login {
+  align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: center;
+  padding: 10px;
 }
 
 .collection {

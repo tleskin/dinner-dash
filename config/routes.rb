@@ -17,11 +17,14 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :show]
   end
 
+  resources :charges
+
   resource :checkout, only: [:create, :update]
 
   resources :orders, only: [:create]
   resources :categories, only: [:show, :index]
 
+  get "orders/payment", to: "orders#payment"
   get "admin/orders/dashboard", to: "admin/orders#dashboard"
   get "admin/order", to: "admin/orders#show"
   post "admin/order/update", to: "admin/orders#update"
