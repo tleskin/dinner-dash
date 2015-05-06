@@ -272,3 +272,18 @@ table td {
   margin-left: -100px;
   list-style: vertical;
 }
+
+
+
+.filter {
+  padding: 1em;
+  label {
+    font-size: 0.8em;
+    &:after {
+      content: ': ';
+    }
+  }
+  select, input {
+    margin-right: 1em;
+  }
+}
