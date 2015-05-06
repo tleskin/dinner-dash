@@ -40,4 +40,12 @@ class Item < ActiveRecord::Base
   def empty_categories?
     params[:item][:category_ids].reject(&:empty?).empty?
   end
+
+  def modify_status(status_param)
+    if status_param == "false"
+      status = false
+    else
+      status = true
+    end
+  end
 end

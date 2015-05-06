@@ -21,17 +21,11 @@ class CheckoutsController < ApplicationController
   def confirmation
     @items = @cart.find_valid_items
     @item_quantities = @cart.contents
+    if @items.empty?
+      flash[:errors] = "Reality Check! Cart can't be empty!"
+      redirect_to categories_path
+    end
   end
-
-  # def update
-  #   if params[:change] == "increase"
-  #     @cart.increase_quantity(params[:item_id])
-  #     redirect_to checkout_path
-  #   elsif params[:change] == "decrease"
-  #     @cart.decrease_quantity(params[:item_id])
-  #     redirect_to checkout_path
-  #   end
-  # end
 
   def increase
     @cart.increase_quantity(params[:item_id])
