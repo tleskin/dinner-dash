@@ -8,7 +8,7 @@ class Item < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png"]
   validates :title, presence: true
   validates :description, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { greater_than: 0 }
 
   has_many :item_categories
   has_many :categories, through: :item_categories

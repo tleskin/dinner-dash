@@ -1,10 +1,11 @@
 
+<h1>Login to HipsterBytes</h1>
 <div id="login_form">
 
   <%= form_for(:session, url: login_path) do |f| %>
-  <%= f.text_field :email, placeholder: 'Email' %>
-  <%= f.password_field :password, placeholder: 'Password' %>
-  <%= f.submit 'Submit'%>
+  <div class="field"><%= f.text_field :email, placeholder: 'Email' %><br></div>
+  <div class="field"><%= f.password_field :password, placeholder: 'Password' %><br></div>
+  <div class="field"><%= f.submit 'Submit'%></div>
   <% end %>
 
 </div>

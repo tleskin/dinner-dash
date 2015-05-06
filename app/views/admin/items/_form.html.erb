@@ -1,12 +1,15 @@
-  <%= form_for([:admin, @item]) do |f| %>
-  <%= f.text_field :title, placeholder: "Item title"  %>
-  <%= f.text_field :description, placeholder: "Item description" %>
-  <%= f.text_field :price, placeholder: "Price" %>
-  <%= f.collection_check_boxes(:category_ids, @categories, :id, :name) %>
-  <%= f.label :status %>
-  Retired<%= f.radio_button :status, false  %>
-  Active<%= f.radio_button :status, true  %>
-  <%= f.label :image %><br>
-  <%= f.file_field :image %>
+  <div class="form">
+
+  <div class="field"><%= form_for([:admin, @item]) do |f| %><div>
+  <div class="field"><%= f.text_field :title, placeholder: "Item title"  %></div><br>
+  <div class="field"><%= f.text_field :description, placeholder: "Item description" %><div><br>
+  <div class="field"><%= f.text_field :price, placeholder: "Price" %><div><br>
+  <div class="collection"><%= f.collection_check_boxes(:category_ids, @categories, :id, :name) %></div><br>
+  <%= f.label :status %><br>
+  Retired <%= f.radio_button :status, false  %><br>
+  Active <%= f.radio_button :status, true  %><br>
+  <%= f.label "Upload an Image"%><br>
+  <%= f.file_field :image %><br>
   <%= f.submit "Submit Item" %>
 <% end %>
+  </div>

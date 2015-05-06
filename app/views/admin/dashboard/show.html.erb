@@ -3,7 +3,7 @@
 
 
 <h1>Admin Dashboard - <%= current_user.username %></h1>
-
+<%= current_user.picture.url(:small) %>
 <%= link_to "All Items", admin_items_path %>
 <%= link_to "Add New Item", new_admin_item_path %>
   </div>
