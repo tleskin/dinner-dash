@@ -7,6 +7,7 @@ class Order < ActiveRecord::Base
   validates :status, presence: true
   validates :subtotal, presence: true
 
+
   enum status: %w(ordered completed cancelled paid)
 
   default_scope { order(created_at: :desc)}
@@ -27,6 +28,14 @@ class Order < ActiveRecord::Base
     order_created_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 
+  def date_created
+    created_at.strftime(" %d %b %Y %l:%M %p")
+  end
+
+  def date_updated
+    updated_at.strftime(" %d %b %Y %l:%M %p")
+  end
+
   def total
     subtotal
   end
@@ -38,4 +47,5 @@ class Order < ActiveRecord::Base
       "#{status} -  updated on: #{self.updated_at.strftime("%A, %d %b %Y %l:%M %p")}"
     end
   end
+
 end

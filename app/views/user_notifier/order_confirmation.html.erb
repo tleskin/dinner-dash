@@ -1,4 +1,10 @@
-<div class="admin_order_show">
+Hi <%= @order.user.name %>
+
+<p>You have successfully placed an order with Hipster Bytes.</p>
+<p>Please find the details of order below.</p>
+
+<p>Thanks,</p>
+<p>The HB Dev Team</p>
 
 <h1>Order Information</h1>
 
@@ -15,23 +21,13 @@
   </tr>
   <% @order.order_items.each do |order_item| %>
   <tr>
-    <td><%=link_to order_item.item.title, item_path(order_item.item) %></td>
+    <td><%= order_item.item.title %></td>
     <td><%= order_item.quantity %></td>
     <td><%= number_to_currency(order_item.item.price / 100.00) %></td>
     <td><%= number_to_currency(order_item.item.price * order_item.quantity / 100.00) %></td>
   </tr>
   <% end %>
   <tr>
-    <td>Order Total - <%= number_to_currency(@order.total.to_f / 100.00) %> </td>
+    <td>Order Total - <%= number_to_currency(@order.total) %> </td>
   </tr>
 </table><br><br>
-
-    <p>
-      Change Order's Status:
-    </p>
-    <ul>
-      <li><%= link_to "Paid", admin_order_update_path({order_id: @order.id, status: "paid"}), method: :post %></li>
-      <li><%= link_to "Completed", admin_order_update_path({order_id: @order.id, status: "completed"}), method: "post" %></li>
-      <li><%= link_to "Cancelled", admin_order_update_path({order_id: @order.id, status: "cancelled"}), method: "post" %></li>
-    </ul>
-</div>
