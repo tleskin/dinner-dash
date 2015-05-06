@@ -6,6 +6,8 @@ class OrdersController < ApplicationController
         order.order_items.create(item_id: item_id.to_i, quantity: quantity)
       end
       order.order_items.create()
+      # require 'pry'; binding.pry
+      UserNotifier.order_confirmation(Order.find(order.id)).deliver_now
       flash[:notice] = "Order Successfully Placed"
       redirect_to current_user
     else
