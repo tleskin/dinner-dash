@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      UserNotifier.send_signup_email(@user).deliver_now
       flash[:message] = "User has been successfully created!"
       redirect_to user_path
     else
