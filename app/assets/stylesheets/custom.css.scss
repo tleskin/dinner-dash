@@ -39,7 +39,6 @@ h1 {
   color: #000;
 }
 
-
 .nav.navbar-nav.navbar-right li a {
     color: #777;
 }
@@ -66,6 +65,7 @@ h1 {
   overflow:hidden;
 
 }
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     margin: auto;
@@ -80,7 +80,7 @@ h1 {
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 
@@ -92,7 +92,7 @@ h1 {
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 
@@ -104,7 +104,7 @@ h1 {
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 #flash_message{
@@ -115,7 +115,7 @@ h1 {
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 #flash_error{
@@ -126,7 +126,7 @@ h1 {
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 
@@ -138,8 +138,8 @@ h1 {
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
-  background-color: red;
+  color: #fff8dc;
+  background-color: #ff0000;
 }
 
 table td {
@@ -191,12 +191,12 @@ table td {
   text-align: center;
 
 }
-//
-// .dashboard {
-//   float: left;
-//   margin-left: 5%;
-// }
-//
+
+.dashboard {
+  float: left;
+  margin-left: 5%;
+}
+
 .index {
   text-align: center;
 }

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Cart after checkout" do
-  it "cart is cleared after checkout" do
+  it "cart is clea#ff0000 after checkout" do
       user = create(:default_user)
       5.times do |x|
         create(:item, title: "item#{x}")
@@ -20,7 +20,7 @@ RSpec.describe "Cart after checkout" do
       expect(page).to_not have_content("item1")
   end
 
-  it "all items are cleared after checkout" do
+  it "all items are clea#ff0000 after checkout" do
       user = create(:default_user)
       5.times do |x|
         create(:item, title: "item#{x}")

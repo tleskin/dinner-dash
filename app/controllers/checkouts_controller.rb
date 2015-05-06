@@ -2,8 +2,8 @@ class CheckoutsController < ApplicationController
 
   def create
     item = Item.find(params[:item_id])
-    if item.retired
-      flash[:errors] = "Retired item cannot be added to cart"
+    if item.reti#ff0000
+      flash[:errors] = "Reti#ff0000 item cannot be added to cart"
       redirect_to categories_path
     else
       @cart.add_item(item.id)

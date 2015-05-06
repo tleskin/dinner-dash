@@ -16,16 +16,18 @@ Rails.application.routes.draw do
   namespace :user do
     resources :orders, only: [:index, :show]
   end
-
+  
   get "/login/twitter", to: "sessions#twitter"
 
   get '/auth/:provider/callback' => 'sessions#create'
+  resources :charges
 
   resource :checkout, only: [:create, :update]
 
   resources :orders, only: [:create]
   resources :categories, only: [:show, :index]
 
+  get "orders/payment", to: "orders#payment"
   get "admin/orders/dashboard", to: "admin/orders#dashboard"
   get "admin/order", to: "admin/orders#show"
   post "admin/order/update", to: "admin/orders#update"
