@@ -15,7 +15,7 @@ RSpec.describe 'user authentication' do
       click_button "Submit"
 
       expect(current_path).to eq(user_path)
-      expect(page).to have_content("#{user.username} Dashboard")
+      expect(page).to have_content("#{user.name} Dashboard")
     end
   end
 

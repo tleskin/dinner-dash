@@ -37,6 +37,7 @@ class Admin::ItemsController < Admin::BaseController
     @item = Item.find(params[:id])
     categories = params[:item][:category_ids].reject(&:empty?)
     if @item.update(item_params)
+      @item.modify_status(params[:status])
       @item.categories.destroy_all
       categories.each do |id|
         @item.categories << Category.find(id)
