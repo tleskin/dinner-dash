@@ -12,7 +12,9 @@ RSpec.describe "admin items" do
 
       visit admin_dashboard_path
 
-      click_link "All Items"
+      within(".dashboard") do
+        click_link "All Items"
+      end
 
       expect(current_path).to eq(admin_items_path)
       expect(page).to have_content("Item0")
