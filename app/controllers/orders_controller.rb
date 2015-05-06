@@ -7,12 +7,16 @@ class OrdersController < ApplicationController
       end
       order.order_items.create()
       flash[:notice] = "Order Successfully Placed"
-      redirect_to current_user
+      redirect_to orders_payment_path 
     else
       flash[:error] = "Grow your beard, try again"
       redirect_to checkout_path
     end
     @cart.clear
+  end
+
+  def payment
+
   end
 
   private
