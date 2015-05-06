@@ -1,7 +1,5 @@
 <div class="index">
 <h2>All Menu Items</h2>
-
-
   <% @items.each do |item| %>
     <%= image_tag item.image.url(:thumb) %>
     <h4><%= link_to "#{item.title}",item_path(item) %></h4>

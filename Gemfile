@@ -16,7 +16,10 @@ gem 'database_cleaner'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
 gem 'friendly_id'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'byebug'

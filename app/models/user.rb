@@ -11,10 +11,22 @@ class User < ActiveRecord::Base
 
   has_many :orders, dependent: :destroy
   validates :name, length: { in: 2..32 }
-  validates :username, presence: true, uniqueness: true
+  validates :username, uniqueness: true
   validates :email, presence: true, uniqueness: true,
             format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   enum role: %w(default admin)
 
+  def self.find_or_create_by_auth(auth_data)
+
+    user = User.where(id: auth_data['uid'][1..3]).first_or_create
+    if user.name != auth_data["info"]["name"]
+      user.name = auth_data["info"]["name"]
+      user.username = auth_data["info"]["nickname"]
+      user.email = "temp_email@example.com"
+      user.password = "temporarypassword"
+      user.save
+    end
+    user
+  end
 end
