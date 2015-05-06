@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include ActionView::Helpers::TextHelper
+  
 
   before_action :load_cart
   before_action :categories

@@ -51,8 +51,8 @@ Item.create(title: "Alternative Artichokes", description: "These grilled articho
 Item.create(title: "Grunge burger", description: "Greasy, oily and loud", price:2000).categories << Category.find(5)
 
 
-Order.create(user_id: 1, subtotal: 500, status: 0).order_items.create(item_id: 1, quantity: 6)
-Order.create(user_id: 1, subtotal: 500, status: 0).order_items.create(item_id: 1, quantity: 6)
+Order.create!(user_id: 1, subtotal: 500, status: 0).order_items.create(item_id: 1, quantity: 6)
+Order.create!(user_id: 1, subtotal: 500, status: 0).order_items.create(item_id: 1, quantity: 6)
 Order.create(user_id: 1, subtotal: 500, status: 0).order_items.create(item_id: 1, quantity: 6)
 Order.create(user_id: 1, subtotal: 500, status: 0).order_items.create(item_id: 1, quantity: 6)
 Order.create(user_id: 1, subtotal: 500, status: 0).order_items.create(item_id: 2, quantity: 6)
