@@ -1,5 +1,5 @@
 require "rails_helper"
-  
+
 RSpec.describe "admin can create categories" do
   context "with admin logged in" do
     it "can create a new category" do
@@ -10,7 +10,7 @@ RSpec.describe "admin can create categories" do
 
       visit admin_categories_path
       click_button "Create Category"
-      
+
       expect(current_path).to eq(new_admin_category_path)
 
       fill_in "Name", with: "vegan"
@@ -42,5 +42,3 @@ RSpec.describe "admin can create categories" do
   end
 
 end
-
-

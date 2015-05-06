@@ -22,7 +22,7 @@
   </tr>
   <% end %>
   <tr>
-    <td>Order Total - <%= number_to_currency(@order.total) %> </td>
+    <td>Order Total - <%= number_to_currency(@order.total.to_f / 100.00) %> </td>
   </tr>
 </table><br><br>
 
