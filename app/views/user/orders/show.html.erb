@@ -22,7 +22,7 @@
     </tr>
   <% end %>
   <td>total</td>
-  <td><%= number_to_currency(@order.subtotal) %></td>
+  <td><%= number_to_currency(@order.subtotal.to_f / 100.00) %></td>
 </table>
 </div>
 </div>

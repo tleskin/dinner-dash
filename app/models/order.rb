@@ -28,6 +28,14 @@ class Order < ActiveRecord::Base
     order_created_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 
+  def date_created
+    created_at.strftime(" %d %b %Y %l:%M %p")
+  end
+
+  def date_updated
+    updated_at.strftime(" %d %b %Y %l:%M %p")
+  end
+
   def total
     subtotal
   end
