@@ -6,8 +6,8 @@ class Item < ActiveRecord::Base
                                    }, default_url: "fork_knife1.jpg"
 
   validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png"]
-  
-  validates :title, presence: true
+
+  validates :title, presence: true, uniqueness: true
   validates :description, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
 
