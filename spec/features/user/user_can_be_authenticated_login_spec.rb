@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'user authentication' do
-  context 'a registe#ff0000 user' do
+  context 'a registered user' do
     let!(:user) {User.create(name: 'John Doe',
                              username: 'JDoe',
                              email: 'jdoe@example.com',
@@ -19,7 +19,7 @@ RSpec.describe 'user authentication' do
     end
   end
 
-  context 'an unregiste#ff0000 user' do
+  context 'an unregistered user' do
     it 'can not login' do
       visit login_path
 
@@ -28,7 +28,7 @@ RSpec.describe 'user authentication' do
       click_button "Submit"
 
       expect(current_path).to eq(login_path)
-      expect(page).to have_content("Invalid C#ff0000entials. Please Try Again.")
+      expect(page).to have_content("Invalid Credentials. Please Try Again.")
     end
   end
 end

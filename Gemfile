@@ -7,7 +7,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'turbolinks'
+# gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "paperclip"
@@ -25,7 +25,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
-  gem 'spring', '~> 1.3.5'
+  # gem 'spring', '~> 1.3.5'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'capybara'

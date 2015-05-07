@@ -34,6 +34,9 @@ RSpec.describe "unauthorized user" do
 
       click_button "Confirm Order"
 
+      expect(page).to have_content("Would you like to pay now?")
+
+      click_button("No thanks, Ill pay later.")
       expect(page).to have_content("Dashboard")
     end
   end

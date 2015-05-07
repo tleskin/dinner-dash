@@ -23,11 +23,11 @@ class Item < ActiveRecord::Base
     if status == true
       "active"
     else
-      "reti#ff0000"
+      "retired"
     end
   end
 
-  def reti#ff0000
+  def retired
     status == false
   end
 
