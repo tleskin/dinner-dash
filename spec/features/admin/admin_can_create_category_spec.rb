@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "admin can create categories" do
+RSpec.describe "admin categories" do
   context "with admin logged in" do
     it "can create a new category" do
       admin = create(:admin_user)
@@ -41,4 +41,37 @@ RSpec.describe "admin can create categories" do
     end
   end
 
+  context "with admin logged in" do
+    it "cannot create a category that has already been created" do
+      admin = create(:admin_user)
+      category = create(:category)
+      allow_any_instance_of(ApplicationController)
+        .to receive(:current_user)
+        .and_return(admin)
+
+      visit admin_categories_path
+      click_button "Create Category"
+      fill_in "Name", with: "main course"
+      fill_in "Description", with: "for main course items"
+      click_button "Create Category"
+      expect(page).to have_content("Name has already been taken, Description has already been taken")
+    end
+  end
+
+  context "with admin logged in" do
+    it "cannot create a category that is blank" do
+      admin = create(:admin_user)
+      allow_any_instance_of(ApplicationController)
+        .to receive(:current_user)
+        .and_return(admin)
+
+      visit admin_categories_path
+      click_button "Create Category"
+      fill_in "Name", with: ""
+      fill_in "Description", with: ""
+      click_button "Create Category"
+      save_and_open_page
+      expect(page).to have_content("Name can't be blank, Description can't be blank")
+    end
+  end
 end
