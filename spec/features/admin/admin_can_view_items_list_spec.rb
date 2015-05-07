@@ -12,7 +12,7 @@ RSpec.describe "admin items" do
 
       visit admin_dashboard_path
 
-      within(".dashboard") do
+      within(".admin-links") do
         click_link "All Items"
       end
 
