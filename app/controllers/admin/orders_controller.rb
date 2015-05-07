@@ -1,7 +1,7 @@
 class Admin::OrdersController < Admin::BaseController
   def dashboard
     @orders = Order.all
-    @statuses = ["ordered", "completed", "cancelled", "paid"]
+    @statuses = ["all", "ordered", "completed", "paid", "cancelled"]
     render :dashboard
   end
 

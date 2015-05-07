@@ -39,7 +39,6 @@ h1 {
   color: #000;
 }
 
-
 .nav.navbar-nav.navbar-right li a {
     color: #777;
 }
@@ -66,6 +65,7 @@ h1 {
   overflow:hidden;
 
 }
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     margin: auto;
@@ -75,64 +75,71 @@ h1 {
 #flash_notice {
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 
 #flash_errors{
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 
 #flash_messages{
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 #flash_message{
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
 }
 #flash_error{
   font-family: monospace;
   text-style: bold;
-  text-color: red;
   opacity: .8;
   text-align: center;
   margin-right: 60%;
   padding:4px;
   border-radius: 100px;
-  color: cornsilk;
+  color: #fff8dc;
   background-color: darkgrey;
+}
+
+#flash_twitter {
+  font-family: monospace;
+  text-style: bold;
+  opacity: .8;
+  text-align: center;
+  margin-right: 60%;
+  padding:4px;
+  border-radius: 100px;
+  color: #fff8dc;
+  background-color: red;
 }
 
 table td {
@@ -184,12 +191,12 @@ table td {
   text-align: center;
 
 }
-//
-// .dashboard {
-//   float: left;
-//   margin-left: 5%;
-// }
-//
+
+.dashboard {
+  float: left;
+  margin-left: 5%;
+}
+
 .index {
   text-align: center;
 }
@@ -268,7 +275,30 @@ table td {
   font-color: white;
 }
 
+.twitter-login {
+  align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: center;
+  padding: 10px;
+}
+
 .collection {
   margin-left: -100px;
   list-style: vertical;
+}
+
+
+
+.filter {
+  padding: 1em;
+  label {
+    font-size: 0.8em;
+    &:after {
+      content: ': ';
+    }
+  }
+  select, input {
+    margin-right: 1em;
+  }
 }
