@@ -13,10 +13,10 @@ RSpec.describe "admin capabilities" do
 
       visit admin_dashboard_path
 
-      within(".dashboard") do
+      within(".admin-links") do
         click_link "All Items"
       end
-      
+
       expect(current_path).to eq(admin_items_path)
 
       click_link "Item1"

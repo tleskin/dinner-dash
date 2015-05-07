@@ -9,10 +9,9 @@ RSpec.describe "Admin login" do
       fill_in "Email", with: "janedoe@example.com"
       fill_in "Password", with: "password"
       click_button "Submit"
-      within(".dashboard") do
-        expect(current_path).to eq(admin_dashboard_path)
-        expect(page).to have_content("Admin Dashboard - Welcome Jane Doe!")
-      end
+
+      expect(current_path).to eq(admin_dashboard_path)
+      expect(page).to have_content("Admin Dashboard - Welcome Jane Doe!")
     end
   end
 
