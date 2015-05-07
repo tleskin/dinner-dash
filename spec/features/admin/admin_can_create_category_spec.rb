@@ -35,6 +35,7 @@ RSpec.describe "admin can create categories" do
       click_button "Create Category"
       fill_in "Name", with: "vegan"
       fill_in "Description", with: "rabbit food"
+      within(".")
       click_button "Create Category"
       expect(page).to have_content("vegan")
       expect(page).to have_content("MEAT")
