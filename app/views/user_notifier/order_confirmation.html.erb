@@ -1,4 +1,4 @@
-Hi <%= @order.user.name %>
+Hi <%= @order.user.name %>!
 
 <p>You have successfully placed an order with Hipster Bytes.</p>
 <p>Please find the details of order below.</p>
@@ -28,6 +28,6 @@ Hi <%= @order.user.name %>
   </tr>
   <% end %>
   <tr>
-    <td>Order Total - <%= number_to_currency(@order.total) %> </td>
+    <td>Order Total - <%= number_to_currency(@order.total.to_f/100.000) %> </td>
   </tr>
 </table><br><br>
