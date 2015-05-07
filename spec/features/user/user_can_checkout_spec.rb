@@ -27,5 +27,16 @@ RSpec.describe "user checkout" do
       click_button "No thanks, Ill pay later."
       expect(page).to have_content("Dashboard")
     end
+
+    it "can not checkout without anything in cart" do
+      user = create(:default_user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit checkout_path
+
+      click_button "Checkout"
+
+      expect(page).to have_content("Reality Check! Cart can't be empty!")
+    end
   end
 end

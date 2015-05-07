@@ -18,12 +18,11 @@ class User < ActiveRecord::Base
   enum role: %w(default admin)
 
   def self.find_or_create_by_auth(auth_data)
-
-    user = User.where(id: auth_data['uid'][1..3]).first_or_create
+    user = User.find_or_create_by(id: auth_data['uid'][1..3])
     if user.name != auth_data["info"]["name"]
       user.name = auth_data["info"]["name"]
       user.username = auth_data["info"]["nickname"]
-      user.email = "temp_email@example.com"
+      user.email = "temp_email#{auth_data['uid']}@example.com"
       user.password = "temporarypassword"
       user.save
     end
