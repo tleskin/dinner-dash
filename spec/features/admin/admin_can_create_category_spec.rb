@@ -70,7 +70,6 @@ RSpec.describe "admin categories" do
       fill_in "Name", with: ""
       fill_in "Description", with: ""
       click_button "Create Category"
-      save_and_open_page
       expect(page).to have_content("Name can't be blank, Description can't be blank")
     end
   end
