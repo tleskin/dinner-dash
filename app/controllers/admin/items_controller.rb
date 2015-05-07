@@ -14,7 +14,6 @@ class Admin::ItemsController < Admin::BaseController
 
   def create
     @item = Item.new(item_params)
-    # require 'pry'; binding.pry
     if @item.save
       categories = params[:item][:category_ids].reject(&:empty?)
       categories.each do |id|

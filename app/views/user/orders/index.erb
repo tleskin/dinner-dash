@@ -12,7 +12,7 @@
   <% @orders.each do |order| %>
     <tr>
       <td><%= link_to "#{order.id}", user_order_path(order) %></td>
-      <td><%= order.subtotal %></td>
+      <td><%= order.subtotal.to_f / 100.00 %></td>
       <td><%= order.date_of_order(order.created_at) %></td>
       <td><%= order.status %></td>
     </tr>

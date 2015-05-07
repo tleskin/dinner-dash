@@ -16,9 +16,9 @@
         </tr>
       </table>
 
+
+<p><%= render "admin/orders/filter" %></p>
     </div><br>
-    
-<%= render "admin/orders/filter" %>
 
     <div class="admin_orders_list">
     <div class="center_div">
@@ -31,6 +31,7 @@
           <th>Created_At</th>
           <th>Last_Updated_At</th>
           <th>Status</th>
+          <th>update Status</th>
         </tr>
     <div class="orders">
       <% @orders.each do |order| %>
@@ -41,6 +42,10 @@
           <td><%= order.date_created %></td>
           <td><%= order.date_updated %></td>
           <td class="order_status"><%= order.status %></td>
+          <td><%= link_to "Paid", admin_order_update_path({order_id: order.id, status: "paid"}), method: :post %>
+              <%= link_to "Completed", admin_order_update_path({order_id: order.id, status: "completed"}), method: "post" %>
+              <%= link_to "Cancelled", admin_order_update_path({order_id: order.id, status: "cancelled"}), method: "post" %>
+            </td>
         </tr>
       <% end %>
     </div>

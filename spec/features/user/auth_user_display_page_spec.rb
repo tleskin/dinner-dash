@@ -16,7 +16,7 @@ RSpec.describe "User view" do
       click_button "Confirm Order"
 
       visit user_path(user)
-      click_button "Orders"
+      click_button "Order History"
 
       expect(page).to have_content("Orders")
       visit user_order_path(item.orders.first.id)
