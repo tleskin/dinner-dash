@@ -31,7 +31,7 @@ class Admin::CategoriesController < Admin::BaseController
       flash[:message] = "Category was successfully created!"
       redirect_to admin_categories_path
     else
-      flash[:error] = "Category creation failed!"
+      flash[:error] = @category.errors.full_messages.join(", ")
       render :new
     end
   end
