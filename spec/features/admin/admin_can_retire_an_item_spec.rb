@@ -25,7 +25,7 @@ RSpec.describe "admin capabilities" do
       page.choose "item[status]", match: :first
       click_button "Submit Item"
 
-      expect(page).to have_content("reti#ff0000")
+      expect(page).to have_content("retired")
     end
   end
 end

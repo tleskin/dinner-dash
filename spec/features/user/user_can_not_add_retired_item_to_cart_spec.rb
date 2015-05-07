@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "reti#ff0000 item" do
+RSpec.describe "retired item" do
   it "cannot be added to cart" do
     admin = create(:admin_user)
     item = create(:item, title: "item1")
