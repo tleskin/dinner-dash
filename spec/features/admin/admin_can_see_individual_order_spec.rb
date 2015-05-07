@@ -30,7 +30,7 @@ RSpec.describe "Admin" do
       within(".center_div") do
       first(:link).click
     end
-
+      
       expect(page).to have_content("Order Information")
     end
   end
