@@ -21,6 +21,7 @@ class Admin::CategoriesController < Admin::BaseController
       flash[:message] = "Category has been updated!"
       redirect_to admin_categories_path
     else
+      flash[:error] = @category.errors.full_messages.join(", ")
       render :edit
     end
   end
