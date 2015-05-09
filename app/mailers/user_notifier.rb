@@ -1,5 +1,5 @@
 class UserNotifier < ApplicationMailer
-  default from: "Hipster Bytes"
+  default from: "hipsterbites@gmail.com"
 
   def send_signup_email(user)
     @user = user
@@ -9,7 +9,6 @@ class UserNotifier < ApplicationMailer
 
   def order_confirmation(order)
     @order = order
-    # require 'pry'; binding.pry
     mail(to: @order.user.email, subject: 'Order has been received')
   end
 end
