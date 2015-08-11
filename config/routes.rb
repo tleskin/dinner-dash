@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   namespace :user do
     resources :orders, only: [:index, :show]
   end
-  
+
   get "/login/twitter", to: "sessions#twitter"
 
   get '/auth/:provider/callback' => 'sessions#create'
