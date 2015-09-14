@@ -1,11 +1,20 @@
-#Hipster Bytes
+# Hipster Bytes
 
-## Dinner Dash
-### A Project for Turing School of Software and Design
+####Collaborators:
+Tom Leskin, Mihir Parikh, Kenny Chen and Andrew Carmer
 
+## About
 
-Collaborator:
-Tom Leskin, Mihir Parikh, Kenny Chen, and Andrew Carmer
+HipsterBytes is an e-commerce restaurant website created with Ruby on Rails. It authenticates with either email and a password or Twitter OmniAuth. Some added features include order filtering as an admin, email with SendGrid and simulated credit card payments with Stripe.
 
-Check it out at:
-http://HipsterBytes.herokuapp.com
+The default user is "demo+rachel@jumpstartlab.com" and the password is "password", while the default admin user is "admin@example.com" and the password is "password".
+
+Credit card payments can be tested in the app by using the credit card number "4242 4242 4242 4242" and then any expiration date after the current date and any CVC number.
+
+It was a team project called Dinner Dash that was completed as part of the curriculum at the [Turing School of Software & Design](http://turing.io/).
+
+--------
+
+Visit the website at:
+
+[Live demo](http://HipsterBytes.herokuapp.com)
