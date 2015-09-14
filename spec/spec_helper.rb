@@ -1,5 +1,6 @@
 require 'factory_girl_rails'
 require 'simplecov'
+require 'capybara'
 
 RSpec.configure do |config|
 
